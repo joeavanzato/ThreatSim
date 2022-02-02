@@ -1,0 +1,94 @@
+
+commands:
+  T1059.001:
+    Tactic: Execution
+    Name: 'Command and Scripting Interpreter: PowerShell'
+    Commands:
+      - document_discovery_3
+  T1059.003:
+    Tactic: Execution
+    Name: 'Command and Scripting Interpreter: Windows Command Shell'
+    Commands:
+      - local_user_discovery_1
+      - local_user_discovery_2
+      - local_user_discovery_3
+      - local_user_discovery_4
+      - local_user_discovery_5
+      - local_user_discovery_6
+      - local_user_discovery_7
+      - local_system_discovery_1
+      - local_process_discovery_1
+      - local_service_discovery_1
+      - local_share_discovery_1
+      - scheduled_task_remote_1
+      - scheduled_task_local_1
+      - local_privesc_1
+      - local_privesc_2
+      - local_privesc_3
+      - domain_admin_discovery_1
+      - domain_admin_discovery_2
+      - domain_account_discovery_1
+      - document_discovery_1
+      - document_discovery_2
+  T1059.005:
+    Tactic: Execution
+    Name: 'Command and Scripting Interpreter: Visual Basic'
+    Commands:
+  T1059.006:
+    Tactic: Execution
+    Name: 'Command and Scripting Interpreter: Python'
+    Commands:
+  T1059.007:
+    Tactic: Execution
+    Name: 'Command and Scripting Interpreter: JavaScript'
+    Commands:
+  T1610:
+    Tactic: Execution
+    Name: 'Deploy Container'
+    Commands:
+  T1559:
+    Tactic: Execution
+    Name: 'Inter-Process Communication'
+    Commands:
+  T1559.0021:
+    Tactic: Execution
+    Name: 'Inter-Process Communication: Component Object Model'
+    Commands:
+  T1559.002:
+    Tactic: Execution
+    Name: 'Inter-Process Communication: Dynamic Data Exchange'
+    Commands:
+  T1106:
+    Tactic: Execution
+    Name: 'Native API'
+    Commands:
+  T1053.002:
+    Tactic: Execution
+    Name: 'Scheduled Task/Job: At (Windows)'
+    Commands:
+  T1053.005:
+    Tactic: Execution
+    Name: 'Scheduled Task/Job: Scheduled Task'
+    Commands:
+      - scheduled_task_remote_1
+      - scheduled_task_local_1
+  T1129:
+    Tactic: Execution
+    Name: 'Shared Modules'
+    Commands:
+  T1072:
+    Tactic: Execution
+    Name: 'Software Deployment Tools'
+    Commands:
+  T1569.002:
+    Tactic: Execution
+    Name: 'System Services: Service Execution'
+    Commands:
+  T1047:
+    Tactic: Execution
+    Name: 'Windows Management Instrumentation'
+    Commands:
+      - local_system_discovery_1
+      - local_process_discovery_1
+      - local_service_discovery_1
+      - local_share_discovery_1
