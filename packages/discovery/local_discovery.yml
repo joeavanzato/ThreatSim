@@ -1,0 +1,66 @@
+
+---
+commands:
+   lud1:
+      remote: false
+      id: local_user_discovery_1
+      command: 'cmd.exe \c net localgroup "Users"'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   lad1:
+      remote: false
+      id: local_admin_discovery_1
+      command: 'cmd.exe \c net localgroup "Administrators"'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   lud2:
+      remote: false
+      id: local_user_discovery_2
+      command: 'cmd.exe \c dir C:\Users\'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   lud3:
+      remote: false
+      id: local_user_discovery_3
+      command: 'powershell get-localgroupmember -group Users'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   lud4:
+      remote: false
+      id: local_user_discovery_4
+      command: 'wmic useraccount get /ALL'
+      stealth: medium
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   lud5:
+      remote: false
+      id: local_user_discovery_5
+      command: 'wmic useraccount list'
+      stealth: medium
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   lud6:
+      remote: false
+      id: local_user_discovery_6
+      command: 'cmd.exe \c net user'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:

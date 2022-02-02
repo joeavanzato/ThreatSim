@@ -1,0 +1,16 @@
+
+---
+G0049:
+   id: G0049
+   name: 'APT34'
+   aliases:
+      - OilRig
+      - IRN2
+      - Helix Kitten
+   comments: 'None'
+   reference: 'https://attack.mitre.org/groups/G0049/'
+   pattern_1:
+      - scheduled_task_local_1
+      - local_admin_discovery_1
+      - domain_admin_discovery_1
+      - credential_discovery_1

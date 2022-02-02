@@ -1,0 +1,21 @@
+
+---
+commands:
+   dad1:
+      remote: false
+      id: domain_admin_discovery_1
+      command: 'cmd.exe \c net group "domain admins" /domain'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
+   dad2:
+      remote: false
+      id: domain_admin_discovery_2
+      command: 'cmd.exe \c dsquery group "ou=Domain Admins,dc=domain,dc=com"'
+      stealth: low
+      mitre_tactic: Discovery
+      mitre_technique_id:
+      mitre_technique_name:
+      comments:
