@@ -1,0 +1,33 @@
+
+---
+commands:
+   scheduled_task_remote_1:
+      remote: true
+      id: scheduled_task_remote_1
+      command: 'cmd.exe \c at \\$target 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
+      stealth: low
+      mitre:
+      comments: 'Demonstrates Remote Task Scheduling often used by Threat Actors for persistence or execution'
+   scheduled_task_local_1:
+      remote: false
+      id: scheduled_task_local_1
+      command: 'cmd.exe \c at 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
+      stealth: low
+      mitre:
+      comments: 'Demonstrates Local Task Scheduling often used by Threat Actors for persistence or execution'
+   add_local_admin_1:
+      remote: false
+      id: add_local_admin_1
+      command: 'cmd.exe \c net user threatsim /add & net localgroup Administrators threatsim /add'
+      stealth: low
+      mitre:
+         - 'Persistence;T1098;Account Manipulation'
+      comments: 'Create a local user and add it to the administrators group.'
+   add_local_user_1:
+      remote: false
+      id: add_local_admin_1
+      command: 'cmd.exe \c net user threatsim /add'
+      stealth: low
+      mitre:
+         - 'Persistence;T1098;Account Manipulation'
+      comments: 'Create a local user.'
