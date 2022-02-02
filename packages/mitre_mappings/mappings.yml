@@ -1,0 +1,91 @@
+- commands:
+  - domain_admin_discovery_1
+  - domain_admin_discovery_2
+  - domain_account_discovery_1
+  - local_user_discovery_1
+  - local_user_discovery_2
+  - local_user_discovery_3
+  - local_user_discovery_4
+  - local_user_discovery_5
+  - local_user_discovery_6
+  - local_user_discovery_7
+  - local_system_discovery_1
+  - local_process_discovery_1
+  - local_service_discovery_1
+  - local_share_discovery_1
+  - document_discovery_1
+  - document_discovery_2
+  technique_id: T1059.003
+  technique_name: 'Command and Scripting Interpreter: Windows Command Shell'
+  technique_tactic: Execution
+- commands:
+  - domain_admin_discovery_1
+  - domain_admin_discovery_2
+  - domain_account_discovery_1
+  technique_id: T1087.002
+  technique_name: 'Account Discovery: Domain Account'
+  technique_tactic: Discovery
+- commands:
+  - local_user_discovery_1
+  - local_user_discovery_2
+  - local_user_discovery_3
+  - local_user_discovery_4
+  - local_user_discovery_5
+  - local_user_discovery_6
+  - local_user_discovery_7
+  technique_id: T1087.001
+  technique_name: 'Account Discovery: Local Account'
+  technique_tactic: Discovery
+- commands:
+  - local_user_discovery_5
+  - local_user_discovery_6
+  - local_system_discovery_1
+  - local_process_discovery_1
+  - local_service_discovery_1
+  technique_id: T1047
+  technique_name: Windows Management Instrumentation
+  technique_tactic: Execution
+- commands:
+  - local_system_discovery_1
+  technique_id: T1082
+  technique_name: System Information Discovery
+  technique_tactic: Discovery
+- commands:
+  - local_process_discovery_1
+  technique_id: T1057
+  technique_name: Process Discovery
+  technique_tactic: Discovery
+- commands:
+  - local_service_discovery_1
+  technique_id: T1007
+  technique_name: System Service Discovery
+  technique_tactic: Discovery
+- commands:
+  - local_share_discovery_1
+  technique_id: T1135
+  technique_name: Network Share Discovery
+  technique_tactic: Discovery
+- commands:
+  - document_discovery_1
+  - document_discovery_2
+  - document_discovery_3
+  technique_id: T1083
+  technique_name: File and Directory Discovery
+  technique_tactic: Discovery
+- commands:
+  - document_discovery_3
+  technique_id: T1059.001
+  technique_name: 'Command and Scripting Interpreter: PowerShell'
+  technique_tactic: Execution
+- commands:
+  - add_local_admin_1
+  technique_id: T1098
+  technique_name: Account Manipulation
+  technique_tactic: Persistence
+- commands:
+  - local_privesc_1
+  - local_privesc_2
+  - local_privesc_3
+  technique_id: T1548.002
+  technique_name: 'Abuse Elevation Control Mechanism: Bypass User Account Control'
+  technique_tactic: Privilege Escalation
