@@ -9,6 +9,16 @@ import datetime
 import deliveries.CMD_REPLACEMENTS
 import threat_actor
 
+binary_dir = os.getcwd()
+if getattr(sys, 'frozen', False):
+    application_path = sys._MEIPASS
+else:
+    application_path = os.path.dirname(os.path.abspath(__file__))
+try:
+    os.chdir(application_path)
+except:
+    pass
+
 def parse_args():
     arguments = {}
     parser = argparse.ArgumentParser(usage='''
@@ -193,7 +203,7 @@ def main():
     package_list = read_packages()
     yaml_data = read_files(package_list)
     command_list, command_dict = generate_mappings(yaml_data, updated_args)
-    ta = threat_actor.Actor(updated_args, command_list, command_dict)
+    ta = threat_actor.Actor(updated_args, command_list, command_dict, binary_dir)
 
 main()
 
