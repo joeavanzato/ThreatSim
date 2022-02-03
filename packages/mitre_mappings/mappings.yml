@@ -60,6 +60,7 @@
   - antivm_wmi_serialnumber_2
   - antivm_wmi_model_3
   - antivm_wmi_manufacturer_4
+  - system_info_discovery_dir_1
   - scheduled_task_remote_1
   - scheduled_task_local_1
   - add_local_admin_1
@@ -277,6 +278,7 @@
   - document_discovery_dir_docx
   - document_discovery_for_docx
   - document_discovery_ps_docx
+  - system_info_discovery_dir_1
   technique_id: T1083
   technique_name: File and Directory Discovery
   technique_tactic: Discovery
