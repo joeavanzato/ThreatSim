@@ -1,28 +1,28 @@
 
 ---
 commands:
-   domain_admin_discovery_1:
+   domain_admin_discovery_net:
       remote: false
-      id: domain_admin_discovery_1
+      id: domain_admin_discovery_net
       command: 'cmd.exe \c net group "domain admins" /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.002;Account Discovery: Domain Account'
       comments:
-   domain_admin_discovery_2:
+   domain_admin_discovery_dsquery:
       remote: false
-      id: domain_admin_discovery_2
+      id: domain_admin_discovery_dsquery
       command: 'cmd.exe \c dsquery group "ou=Domain Admins,dc=domain,dc=com"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.002;Account Discovery: Domain Account'
       comments:
-   domain_account_discovery_1:
+   domain_account_discovery_net_all:
       remote: false
-      id: domain_account_discovery_1
-      command: 'cmd.exe \c dsquery group "ou=Domain Admins,dc=domain,dc=com"'
+      id: domain_account_discovery_net_all
+      command: 'cmd.exe \c net user /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'

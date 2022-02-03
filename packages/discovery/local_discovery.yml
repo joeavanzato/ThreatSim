@@ -1,45 +1,45 @@
 
 ---
 commands:
-   local_user_discovery_1:
+   local_user_discovery_net_1:
       remote: false
-      id: local_user_discovery_1
+      id: local_user_discovery_net_1
       command: 'cmd.exe \c net localgroup "Users"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_user_discovery_2:
+   local_user_discovery_admins_2:
       remote: false
-      id: local_user_discovery_2
+      id: local_user_discovery_admins_2
       command: 'cmd.exe \c net localgroup "Administrators"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_user_discovery_3:
+   local_user_discovery_dir_3:
       remote: false
-      id: local_user_discovery_3
+      id: local_user_discovery_dir_3
       command: 'cmd.exe \c dir C:\Users\'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_user_discovery_4:
+   local_user_discovery_ps_4:
       remote: false
-      id: local_user_discovery_4
+      id: local_user_discovery_ps_4
       command: 'powershell get-localgroupmember -group Users'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_user_discovery_5:
+   local_user_discovery_wmic_5:
       remote: false
-      id: local_user_discovery_5
+      id: local_user_discovery_wmic_5
       command: 'wmic useraccount get /ALL'
       stealth: medium
       mitre:
@@ -47,9 +47,9 @@ commands:
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_user_discovery_6:
+   local_user_discovery_wmic_6:
       remote: false
-      id: local_user_discovery_6
+      id: local_user_discovery_wmic_6
       command: 'wmic useraccount list'
       stealth: medium
       mitre:
@@ -57,18 +57,18 @@ commands:
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_user_discovery_7:
+   local_user_discovery_net_7:
       remote: false
-      id: local_user_discovery_7
+      id: local_user_discovery_net_7
       command: 'cmd.exe \c net user'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
-   local_system_discovery_1:
+   local_system_discovery_wmic_qfe:
       remote: false
-      id: local_system_discovery_1
+      id: local_system_discovery_wmic_qfe
       command: 'wmic.exe qfe get description,installedOn /format:csv'
       stealth: low
       mitre:
@@ -76,9 +76,9 @@ commands:
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Discovery;T1082;System Information Discovery'
       comments:
-   local_process_discovery_1:
+   local_process_discovery_wmic_process:
       remote: false
-      id: local_process_discovery_1
+      id: local_process_discovery_wmic_process
       command: 'wmic process get caption,executablepath,commandline'
       stealth: low
       mitre:
@@ -86,9 +86,9 @@ commands:
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Discovery;T1057;Process Discovery'
       comments:
-   local_service_discovery_1:
+   local_service_discovery_wmic_service:
       remote: false
-      id: local_service_discovery_1
+      id: local_service_discovery_wmic_service
       command: 'wmic service get name,displayname,pathname,startmode'
       stealth: low
       mitre:
@@ -96,36 +96,36 @@ commands:
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Discovery;T1007;System Service Discovery'
       comments:
-   local_share_discovery_1:
+   local_share_discovery_wmic_share:
       remote: false
-      id: local_share_discovery_1
+      id: local_share_discovery_wmic_share
       command: 'wmic share list'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1135;Network Share Discovery'
       comments:
-   document_discovery_1:
+   document_discovery_dir_docx:
       remote: false
-      id: document_discovery_1
+      id: document_discovery_dir_docx
       command: 'cmd.exe /c dir c: /b /s .docx | findstr /e .docx'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1083;File and Directory Discovery'
       comments:
-   document_discovery_2:
+   document_discovery_for_docx:
       remote: false
-      id: document_discovery_2
-      command: 'cmd.exe /c for /R c: %f in (*.docx) do copy %f c:\temp\'
+      id: document_discovery_for_docx
+      command: 'cmd.exe /c for /R c: %f in (*.docx) do copy %f c:\threatsim\'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1083;File and Directory Discovery'
       comments:
-   document_discovery_3:
+   document_discovery_ps_docx:
       remote: false
-      id: document_discovery_3
+      id: document_discovery_ps_docx
       command: 'powershell -Command "Get-ChildItem -Recurse -Include *.doc | % {Copy-Item $_.FullName -destination c:\temp}"'
       stealth: low
       mitre:
