@@ -5,8 +5,11 @@ import yaml
 import sys
 import traceback
 import random
+import csv
+import os
 
-# TODO - Ordering Technique Execution by Tactic
+# TODO - Ordering Technique Execution by Tactic [Sort of Done]
+# TODO - 'Step' mode with known commands versus Technique Picking of Random ones
 
 class Actor():
 
@@ -32,15 +35,18 @@ class Actor():
         self.actor_file = args['actor']
         self.target = args['target']
         self.remote = args['remote']
-
+        self.csv_fields = ['time','command', 'actor_id', 'mitre_tactic','mitre_technique','logged?','detected?','blocked?']
+        self.csv_filename = 'commands_executed.csv'
+        self.start_csv(self.csv_filename, self.csv_fields)
         self.read_configs()
         #self.order_techniques() # Probably not needed anymore.
         print(self.actor_name)
         print(self.actor_id)
         print(self.actor_description)
 
-        self.choose_commands()
-        self.execute()
+        if self.mode == 'techniques':
+            self.choose_commands()
+            self.execute()
 
     def execute(self):
         for k in self.tactic_order:
@@ -48,8 +54,14 @@ class Actor():
             if k in self.available_commands:
                 commands = self.available_commands[k]
                 for c in commands:
+                    csv_dict = {}
                     print("EXECUTING: "+self.command_dict[c])
                     result = 0
+                    csv_dict['time'] = datetime.datetime.now()
+                    csv_dict['command'] = self.command_dict[c]
+                    csv_dict['actor_id'] = self.actor_id
+                    csv_dict['mitre_tactic'] = k
+                    self.write_row(self.csv_filename, self.csv_fields, csv_dict)
                     #result = self.command_check(str(self.command_dict[c]))
                     if result == "ERROR":
                         print("Error Executing Command")
@@ -130,3 +142,14 @@ class Actor():
             except yaml.YAMLError as e:
                 print(e)
                 sys.exit(1)
+
+    def start_csv(self, file, fields):
+        if not os.path.isfile(file):
+            with open(file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=fields)
+                writer.writeheader()
+
+    def write_row(self, file, fields, dict):
+        with open(file, 'a', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writerow(dict)
