@@ -7,6 +7,7 @@ import logging
 import datetime
 
 import deliveries.CMD_REPLACEMENTS
+import threat_actor
 
 
 def parse_args():
@@ -22,6 +23,8 @@ def parse_args():
                                               " select one at random or 'generic' to implement random choices in techniques.  If not specified, will use 'random'",
                         required=False, nargs=1, type=str)
     parser.add_argument("-dr", "--disable_remote", action='store_true', help="Disable Techniques marked as remote=true such as Proxy/DNS Requests, Domain Queries, etc")
+    parser.add_argument("-s", "--steps", help="Use Known Step-Based Patterns", action='store_true')
+    parser.add_argument("-te", "--techniques", help="Use Known Technique-Based Patterns", action='store_true')
     args = parser.parse_args()
 
     actor_list = os.listdir('packages\\actors')
@@ -47,6 +50,17 @@ def parse_args():
         arguments['remote'] = False
     else:
         arguments['remote'] = True
+
+    if args.steps and args.techniques:
+        print("Choose Only One of -s/--steps and -te/--techniques!")
+        sys.exit(1)
+    elif args.steps and not args.techniques:
+        arguments['mode'] = 'steps'
+    elif args.techniques and not args.steps:
+        arguments['mode'] = 'techniques'
+    else:
+        arguments['mode'] = 'techniques'
+
     return arguments
 
 
@@ -72,7 +86,7 @@ def read_files(package_list):
     return data
 
 
-def generate_mappings(yaml_data):
+def generate_mappings(yaml_data, args):
     command_list = []
     command_dict = {}
     # {technique_id = X, technique_name = X, commands = [], technique_tactic = X}
@@ -99,7 +113,9 @@ def generate_mappings(yaml_data):
                     technique_dict['technique_tactic'] = tactic
                     technique_dict['commands'] = []
                     technique_dict['commands'].append(string_data['commands'][item]['id'])
-                    command_dict[string_data['commands'][item]['id']] = string_data['commands'][item]['command']
+                    command_dict[string_data['commands'][item]['id']] = string_data['commands'][item]['command'].replace("$CURDIR$", args['CURDIR'])\
+                        .replace("$RANDOMURL$", args['RANDOMURL']).replace("$RANDOMURL_PS1$",args['RANDOMURL_PS1']).replace("$RANDOMPORTCOMMON$",str(args['RANDOMPORTCOMMON']))\
+                        .replace("$RANDOMPORTUNCOMMON$",str(args['RANDOMPORTUNCOMMON'])).replace("$TARGET$", args['target']).replace("$FQDN$", args['FQDN'])
                     #technique_dict['commands'].append(string_data['commands'][item]['command'])
                     i = 0
                     index = "None"
@@ -111,13 +127,16 @@ def generate_mappings(yaml_data):
                             pass
                     if index != "None":
                         if not string_data['commands'][item]['id'] in command_list[i]['commands']:
-                            print(f"INSERTING: {string_data['commands'][item]['id']} INTO {command_list[i]['technique_id']}")
+                            logging.info(str(datetime.datetime.now()) +f" INSERTING: {string_data['commands'][item]['id']} INTO {command_list[i]['technique_id']}")
+                            #print(f"INSERTING: {string_data['commands'][item]['id']} INTO {command_list[i]['technique_id']}")
                             command_list[i]['commands'].append(string_data['commands'][item]['id'])
                     else:
-                        print(f"INSERTING: {string_data['commands'][item]['id']} INTO {technique_dict['technique_id']}")
+                        logging.info(str(datetime.datetime.now()) +f" INSERTING: {string_data['commands'][item]['id']} INTO {technique_dict['technique_id']}")
+                        #print(f"INSERTING: {string_data['commands'][item]['id']} INTO {technique_dict['technique_id']}")
                         command_list.append(technique_dict)
-            except TypeError:
+            except TypeError as e:
                 print(f"Error MITRE Processing: {string_data['commands'][item]['id']}")
+                print(e)
                 continue
 
     with open('packages\\mitre_mappings\\mappings.yml', 'w') as f:
@@ -126,31 +145,52 @@ def generate_mappings(yaml_data):
     for k,v in command_dict.items():
         print(f"{k}: {v}")
 
+    return command_list, command_dict
+
 
 def logger_setup():
     log_file = "threatsim_log.log"
     logging.basicConfig(filename=log_file, level=logging.DEBUG)
     logging.info(str(datetime.datetime.now()) + " ThreatSim Starting..")
 
-def main():
-    logger_setup()
-    args = parse_args()
-    package_list = read_packages()
-    yaml_data = read_files(package_list)
-    generate_mappings(yaml_data)
-    print(deliveries.CMD_REPLACEMENTS.RANDOMURL)
+
+def update_args(args):
+    print(f"RANDOMURL: {deliveries.CMD_REPLACEMENTS.RANDOMURL}")
+    args['RANDOMURL'] = deliveries.CMD_REPLACEMENTS.RANDOMURL
     logging.info(str(datetime.datetime.now()) + f" RANDOMURL: {deliveries.CMD_REPLACEMENTS.RANDOMURL}")
-    print(deliveries.CMD_REPLACEMENTS.RANDOMURL_PS1)
+    print(f"RANDOMURL_PS1: {deliveries.CMD_REPLACEMENTS.RANDOMURL_PS1}")
+    args['RANDOMURL_PS1'] = deliveries.CMD_REPLACEMENTS.RANDOMURL_PS1
     logging.info(str(datetime.datetime.now()) + f" RANDOMURL_PS1: {deliveries.CMD_REPLACEMENTS.RANDOMURL_PS1}")
-    print(deliveries.CMD_REPLACEMENTS.RANDOMPORTCOMMON)
+    print(f"RANDOMPORTCOMMON: {deliveries.CMD_REPLACEMENTS.RANDOMPORTCOMMON}")
+    args['RANDOMPORTCOMMON'] = deliveries.CMD_REPLACEMENTS.RANDOMPORTCOMMON
     logging.info(str(datetime.datetime.now()) + f" RANDOMPORTCOMMON: {deliveries.CMD_REPLACEMENTS.RANDOMPORTCOMMON}")
-    print(deliveries.CMD_REPLACEMENTS.RANDOMPORTUNCOMMON)
+    print(f"RANDOMPORTUNCOMMON: {deliveries.CMD_REPLACEMENTS.RANDOMPORTUNCOMMON}")
+    args['RANDOMPORTUNCOMMON'] = deliveries.CMD_REPLACEMENTS.RANDOMPORTUNCOMMON
     logging.info(str(datetime.datetime.now()) + f" RANDOMPORTUNCOMMON: {deliveries.CMD_REPLACEMENTS.RANDOMPORTUNCOMMON}")
-    print(deliveries.CMD_REPLACEMENTS.CURDIR)
+    print(f"CURDIR: {deliveries.CMD_REPLACEMENTS.CURDIR}")
+    args['CURDIR'] = deliveries.CMD_REPLACEMENTS.CURDIR
+    logging.info(str(datetime.datetime.now()) + f" CURDIR: {deliveries.CMD_REPLACEMENTS.CURDIR}")
     print(f"Simulating: {args['actor']}")
     logging.info(str(datetime.datetime.now()) + f" Simulating Actor: {args['actor']}")
     print(f"Remote Techniques: {args['remote']}")
     logging.info(str(datetime.datetime.now()) + f" Remote Techniques Enabled: {args['remote']}")
     print(f"FQDN: {deliveries.CMD_REPLACEMENTS.FQDN}")
+    args['FQDN'] = deliveries.CMD_REPLACEMENTS.FQDN
+    logging.info(str(datetime.datetime.now()) + f" FQDN: {deliveries.CMD_REPLACEMENTS.FQDN}")
+    print(f"TARGET: {args['target']}")
+    logging.info(str(datetime.datetime.now()) + f" TARGET: {args['target']}")
+    print(f"MODE: {args['mode']}")
+    logging.info(str(datetime.datetime.now()) + f" MODE: {args['mode']}")
+    return args
+
+def main():
+    logger_setup()
+    args = parse_args()
+    updated_args = update_args(args)
+    package_list = read_packages()
+    yaml_data = read_files(package_list)
+    command_list, command_dict = generate_mappings(yaml_data, updated_args)
+    ta = threat_actor.Actor(updated_args, command_list, command_dict)
+
 main()
 
