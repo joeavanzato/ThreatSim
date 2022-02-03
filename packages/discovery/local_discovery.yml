@@ -4,7 +4,7 @@ commands:
    local_user_discovery_net_1:
       remote: false
       id: local_user_discovery_net_1
-      command: 'cmd.exe \c net localgroup "Users"'
+      command: 'cmd.exe /c net localgroup "Users"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -13,7 +13,7 @@ commands:
    local_user_discovery_admins_2:
       remote: false
       id: local_user_discovery_admins_2
-      command: 'cmd.exe \c net localgroup "Administrators"'
+      command: 'cmd.exe /c net localgroup "Administrators"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -22,7 +22,7 @@ commands:
    local_user_discovery_dir_3:
       remote: false
       id: local_user_discovery_dir_3
-      command: 'cmd.exe \c dir C:\Users\'
+      command: 'cmd.exe /c dir C:\Users\'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -60,7 +60,7 @@ commands:
    local_user_discovery_net_7:
       remote: false
       id: local_user_discovery_net_7
-      command: 'cmd.exe \c net user'
+      command: 'cmd.exe /c net user'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -69,7 +69,7 @@ commands:
    local_user_discovery_whoami_all:
       remote: false
       id: local_user_discovery_whoami_all
-      command: 'cmd.exe \c whoami /all'
+      command: 'cmd.exe /c whoami /all'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'

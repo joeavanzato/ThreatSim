@@ -4,7 +4,7 @@ commands:
    domain_admin_discovery_net:
       remote: true
       id: domain_admin_discovery_net
-      command: 'cmd.exe \c net group "domain admins" /domain'
+      command: 'cmd.exe /c net group "domain admins" /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -14,7 +14,7 @@ commands:
    domain_admin_discovery_dsquery:
       remote: true
       id: domain_admin_discovery_dsquery
-      command: 'cmd.exe \c dsquery group "ou=Domain Admins,dc=domain,dc=com"'
+      command: 'cmd.exe /c dsquery group "ou=Domain Admins,dc=domain,dc=com"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -24,7 +24,7 @@ commands:
    domain_account_discovery_net_all:
       remote: true
       id: domain_account_discovery_net_all
-      command: 'cmd.exe \c net user /domain'
+      command: 'cmd.exe /c net user /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -34,7 +34,7 @@ commands:
    domain_trust_discovery_nltest:
       remote: true
       id: domain_trust_discovery_nltest
-      command: 'cmd.exe \c nltest /domain_trusts'
+      command: 'cmd.exe /c nltest /domain_trusts'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -52,7 +52,7 @@ commands:
    domain_controller_discovery_1:
       remote: true
       id: domain_controller_discovery_1
-      command: 'cmd.exe \c net group "Domain Controllers" /domain'
+      command: 'cmd.exe /c net group "Domain Controllers" /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -61,7 +61,7 @@ commands:
    network_system_discovery_net_1:
       remote: true
       id: network_system_discovery_net_1
-      command: 'cmd.exe \c net view'
+      command: 'cmd.exe /c net view'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
