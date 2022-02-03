@@ -47,7 +47,7 @@ from a known set of TTPs and technique-based patterns where a random command tha
 * ./packages/mitre_mappings/mappings.yml -> Automatically generated YAML file which shows all available commands on a per-technique ID basis, used for random-pool choices of commands.
 * ./packages/MITRE_TACTICS -> YAML files mapping vetted commands to MITRE Techniques/Tactics.
 
-###Replacements Available in Command Strings
+### Replacements Available in Command Strings
 
 * Any Environment Variable in the format %VARNAME% is replaced by os module.
 * $TARGET$ - Remote Target if supplied to ThreatSim
