@@ -13,7 +13,7 @@ import os
 
 class Actor():
 
-    def __init__(self, args, command_list, command_dict):
+    def __init__(self, args, command_list, command_dict, binary_dir):
         self.tactic_order = {}
         self.tactic_order['Reconnaissance'] = 0
         self.tactic_order['Resource Development'] = 1
@@ -36,7 +36,7 @@ class Actor():
         self.target = args['target']
         self.remote = args['remote']
         self.csv_fields = ['time','command', 'actor_id', 'mitre_tactic','mitre_technique','logged?','detected?','blocked?']
-        self.csv_filename = 'commands_executed.csv'
+        self.csv_filename = binary_dir+'\\commands_executed.csv'
         self.start_csv(self.csv_filename, self.csv_fields)
         self.read_configs()
         #self.order_techniques() # Probably not needed anymore.
@@ -62,7 +62,7 @@ class Actor():
                     csv_dict['actor_id'] = self.actor_id
                     csv_dict['mitre_tactic'] = k
                     self.write_row(self.csv_filename, self.csv_fields, csv_dict)
-                    #result = self.command_check(str(self.command_dict[c]))
+                    result = self.command_check(str(self.command_dict[c]))
                     if result == "ERROR":
                         print("Error Executing Command")
                     else:
@@ -97,7 +97,7 @@ class Actor():
         else:
             print("\nSTARTING EXECUTION\n")
 
-    def command_check(command):
+    def command_check(self, command):
         try:
             logging.info(str(datetime.datetime.now()) + " Executing: " + str(command))
             subprocess.run(args=command, capture_output=True, check=True)
