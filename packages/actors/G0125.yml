@@ -1,0 +1,35 @@
+aliases:
+- HAFNIUM
+- Operation Exchange Marauder
+comments: '[HAFNIUM](https://attack.mitre.org/groups/G0125) is a likely state-sponsored
+  cyber espionage group operating out of China that has been active since at least
+  January 2021. [HAFNIUM](https://attack.mitre.org/groups/G0125) primarily targets
+  entities in the US across a number of industry sectors, including infectious disease
+  researchers, law firms, higher education institutions, defense contractors, policy
+  think tanks, and NGOs.(Citation: Microsoft HAFNIUM March 2020)(Citation: Volexity
+  Exchange Marauder March 2021)'
+id: G0125
+name: HAFNIUM
+reference: https://attack.mitre.org/groups/G0125
+techniques:
+- T1203
+- T1583.006
+- T1071.001
+- T1567.002
+- T1592.004
+- T1583.003
+- T1505.003
+- T1003.001
+- T1114.002
+- T1059.001
+- T1560.001
+- T1589.002
+- T1003.003
+- T1590
+- T1136.002
+- T1590.005
+- T1078.003
+- T1095
+- T1132.001
+- T1105
+- T1218.011

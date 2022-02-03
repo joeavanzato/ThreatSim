@@ -1,0 +1,57 @@
+aliases:
+- Fox Kitten
+- UNC757
+- PIONEER KITTEN
+- Parisite
+comments: '[Fox Kitten](https://attack.mitre.org/groups/G0117) is threat actor with
+  a suspected nexus to the Iranian government that has been active since at least
+  2017 against entities in the Middle East, North Africa, Europe, Australia, and North
+  America. [Fox Kitten](https://attack.mitre.org/groups/G0117) has targeted multiple
+  industrial verticals including oil and gas, technology, government, defense, healthcare,
+  manufacturing, and engineering.(Citation: ClearkSky Fox Kitten February 2020)(Citation:
+  CrowdStrike PIONEER KITTEN August 2020)(Citation: Dragos PARISITE )(Citation: ClearSky
+  Pay2Kitten December 2020)'
+id: G0117
+name: Fox Kitten
+reference: https://attack.mitre.org/groups/G0117
+techniques:
+- T1190
+- T1210
+- T1572
+- T1046
+- T1078
+- T1505.003
+- T1059.003
+- T1053.005
+- T1546.008
+- T1036.005
+- T1059.001
+- T1027
+- T1036.004
+- T1003.001
+- T1555.005
+- T1552.001
+- T1003.003
+- T1083
+- T1018
+- T1012
+- T1087.001
+- T1087.002
+- T1021.001
+- T1217
+- T1021.002
+- T1021.004
+- T1021.005
+- T1213
+- T1039
+- T1005
+- T1530
+- T1105
+- T1560.001
+- T1059
+- T1110
+- T1136.001
+- T1090
+- T1585
+- T1585.001
+- T1102

@@ -1,0 +1,49 @@
+aliases:
+- Rocke
+comments: '[Rocke](https://attack.mitre.org/groups/G0106) is an alleged Chinese-speaking
+  adversary whose primary objective appeared to be cryptojacking, or stealing victim
+  system resources for the purposes of mining cryptocurrency. The name [Rocke](https://attack.mitre.org/groups/G0106)
+  comes from the email address "rocke@live.cn" used to create the wallet which held
+  collected cryptocurrency. Researchers have detected overlaps between [Rocke](https://attack.mitre.org/groups/G0106)
+  and the Iron Cybercrime Group, though this attribution has not been confirmed.(Citation:
+  Talos Rocke August 2018)'
+id: G0106
+name: Rocke
+reference: https://attack.mitre.org/groups/G0106
+techniques:
+- T1571
+- T1543.002
+- T1037
+- T1070.006
+- T1222.002
+- T1057
+- T1070.004
+- T1102.001
+- T1027.002
+- T1055.002
+- T1547.001
+- T1018
+- T1564.001
+- T1562.001
+- T1518.001
+- T1562.004
+- T1046
+- T1071.001
+- T1053.003
+- T1059.004
+- T1105
+- T1190
+- T1496
+- T1070.002
+- T1082
+- T1552.004
+- T1021.004
+- T1027.004
+- T1027
+- T1059.006
+- T1574.006
+- T1036.005
+- T1140
+- T1102
+- T1071
+- T1014

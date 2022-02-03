@@ -1,0 +1,19 @@
+aliases:
+- Windigo
+comments: 'The [Windigo](https://attack.mitre.org/groups/G0124) group has been operating
+  since at least 2011, compromising thousands of Linux and Unix servers using the
+  [Ebury](https://attack.mitre.org/software/S0377) SSH backdoor to create a spam botnet.
+  Despite law enforcement intervention against the creators, [Windigo](https://attack.mitre.org/groups/G0124)
+  operators continued updating [Ebury](https://attack.mitre.org/software/S0377) through
+  2019.(Citation: ESET Windigo Mar 2014)(Citation: CERN Windigo June 2019)'
+id: G0124
+name: Windigo
+reference: https://attack.mitre.org/groups/G0124
+techniques:
+- T1090
+- T1189
+- T1005
+- T1083
+- T1059
+- T1518
+- T1082

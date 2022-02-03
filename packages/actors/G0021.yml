@@ -1,0 +1,29 @@
+aliases:
+- Molerats
+- Operation Molerats
+- Gaza Cybergang
+comments: '[Molerats](https://attack.mitre.org/groups/G0021) is an Arabic-speaking,
+  politically-motivated threat group that has been operating since 2012. The group''s
+  victims have primarily been in the Middle East, Europe, and the United States.(Citation:
+  DustySky)(Citation: DustySky2)(Citation: Kaspersky MoleRATs April 2019)(Citation:
+  Cybereason Molerats Dec 2020)'
+id: G0021
+name: Molerats
+reference: https://attack.mitre.org/groups/G0021
+techniques:
+- T1555.003
+- T1057
+- T1553.002
+- T1547.001
+- T1105
+- T1027
+- T1204.001
+- T1204.002
+- T1566.001
+- T1566.002
+- T1059.005
+- T1059.007
+- T1059.001
+- T1140
+- T1053.005
+- T1218.007

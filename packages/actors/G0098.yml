@@ -1,0 +1,17 @@
+aliases:
+- BlackTech
+comments: '[BlackTech](https://attack.mitre.org/groups/G0098) is a cyber espionage
+  group operating against targets in East Asia, particularly Taiwan, and occasionally,
+  Japan and Hong Kong.(Citation: TrendMicro BlackTech June 2017)'
+id: G0098
+name: BlackTech
+reference: https://attack.mitre.org/groups/G0098
+techniques:
+- T1190
+- T1203
+- T1036.002
+- T1204.001
+- T1566.002
+- T1566.001
+- T1204.002
+- T1574.002

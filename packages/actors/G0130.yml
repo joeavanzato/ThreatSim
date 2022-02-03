@@ -1,0 +1,23 @@
+aliases:
+- Ajax Security Team
+- Operation Woolen-Goldfish
+- AjaxTM
+- Rocket Kitten
+- Flying Kitten
+- Operation Saffron Rose
+comments: '[Ajax Security Team](https://attack.mitre.org/groups/G0130) is a group
+  that has been active since at least 2010 and believed to be operating out of Iran.
+  By 2014 [Ajax Security Team](https://attack.mitre.org/groups/G0130) transitioned
+  from website defacement operations to malware-based cyber espionage campaigns targeting
+  the US defense industrial base and Iranian users of anti-censorship technologies.(Citation:
+  FireEye Operation Saffron Rose 2013)'
+id: G0130
+name: Ajax Security Team
+reference: https://attack.mitre.org/groups/G0130
+techniques:
+- T1204.002
+- T1105
+- T1566.001
+- T1056.001
+- T1555.003
+- T1566.003

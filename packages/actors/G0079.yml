@@ -1,0 +1,18 @@
+aliases:
+- DarkHydrus
+comments: '[DarkHydrus](https://attack.mitre.org/groups/G0079) is a threat group that
+  has targeted government agencies and educational institutions in the Middle East
+  since at least 2016. The group heavily leverages open-source tools and custom payloads
+  for carrying out attacks. (Citation: Unit 42 DarkHydrus July 2018) (Citation: Unit
+  42 Playbook Dec 2017)'
+id: G0079
+name: DarkHydrus
+reference: https://attack.mitre.org/groups/G0079
+techniques:
+- T1187
+- T1566.001
+- T1221
+- T1204.002
+- T1059.001
+- T1564.003
+- T1588.002

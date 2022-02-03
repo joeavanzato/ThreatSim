@@ -1,0 +1,74 @@
+aliases:
+- MuddyWater
+- 'Earth Vetala '
+- MERCURY
+- Static Kitten
+- Seedworm
+- TEMP.Zagros
+comments: '[MuddyWater](https://attack.mitre.org/groups/G0069) is an Iranian threat
+  group that has primarily targeted Middle Eastern nations, and has also targeted
+  European and North American nations. The group''s victims are mainly in the telecommunications,
+  government (IT services), and oil sectors. Activity from this group was previously
+  linked to [FIN7](https://attack.mitre.org/groups/G0046), but the group is believed
+  to be a distinct group possibly motivated by espionage.(Citation: Unit 42 MuddyWater
+  Nov 2017)(Citation: Symantec MuddyWater Dec 2018)(Citation: ClearSky MuddyWater
+  Nov 2018)(Citation: ClearSky MuddyWater June 2019)(Citation: Reaqta MuddyWater November
+  2017)'
+id: G0069
+name: MuddyWater
+reference: https://attack.mitre.org/groups/G0069
+techniques:
+- T1036.005
+- T1547.001
+- T1566.001
+- T1003.001
+- T1033
+- T1047
+- T1113
+- T1548.002
+- T1140
+- T1027
+- T1218.011
+- T1218.003
+- T1204.002
+- T1559.002
+- T1518.001
+- T1059.003
+- T1105
+- T1090.002
+- T1057
+- T1560.001
+- T1552.001
+- T1559.001
+- T1218.005
+- T1082
+- T1059.001
+- T1083
+- T1016
+- T1027.004
+- T1104
+- T1555.003
+- T1027.003
+- T1059.005
+- T1003.004
+- T1003.005
+- T1555
+- T1071.001
+- T1203
+- T1132.001
+- T1137.001
+- T1053.005
+- T1041
+- T1583.006
+- T1588.002
+- T1102.002
+- T1589.002
+- T1204.001
+- T1566.002
+- T1087.002
+- T1059.006
+- T1049
+- T1518
+- T1219
+- T1562.001
+- T1059.007

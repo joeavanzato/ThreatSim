@@ -1,0 +1,40 @@
+aliases:
+- APT19
+- Codoso
+- C0d0so0
+- Codoso Team
+- Sunshop Group
+comments: '[APT19](https://attack.mitre.org/groups/G0073) is a Chinese-based threat
+  group that has targeted a variety of industries, including defense, finance, energy,
+  pharmaceutical, telecommunications, high tech, education, manufacturing, and legal
+  services. In 2017, a phishing campaign was used to target seven law and investment
+  firms. (Citation: FireEye APT19) Some analysts track [APT19](https://attack.mitre.org/groups/G0073)
+  and [Deep Panda](https://attack.mitre.org/groups/G0009) as the same group, but it
+  is unclear from open source information if the groups are the same. (Citation: ICIT
+  China''s Espionage Jul 2016) (Citation: FireEye APT Groups) (Citation: Unit 42 C0d0so0
+  Jan 2016)'
+id: G0073
+name: APT19
+reference: https://attack.mitre.org/groups/G0073
+techniques:
+- T1016
+- T1204.002
+- T1071.001
+- T1043
+- T1132.001
+- T1218.010
+- T1059
+- T1082
+- T1218.011
+- T1547.001
+- T1033
+- T1574.002
+- T1112
+- T1059.001
+- T1189
+- T1566.001
+- T1543.003
+- T1140
+- T1027
+- T1564.003
+- T1588.002

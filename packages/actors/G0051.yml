@@ -1,0 +1,21 @@
+aliases:
+- FIN10
+comments: '[FIN10](https://attack.mitre.org/groups/G0051) is a financially motivated
+  threat group that has targeted organizations in North America since at least 2013
+  through 2016. The group uses stolen data exfiltrated from victims to extort organizations.
+  (Citation: FireEye FIN10 June 2017)'
+id: G0051
+name: FIN10
+reference: https://attack.mitre.org/groups/G0051
+techniques:
+- T1059.001
+- T1059.003
+- T1070.004
+- T1033
+- T1547.001
+- T1053.005
+- T1078
+- T1021.001
+- T1570
+- T1078.003
+- T1588.002

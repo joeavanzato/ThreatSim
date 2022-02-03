@@ -1,0 +1,24 @@
+aliases:
+- PROMETHIUM
+- StrongPity
+comments: '[PROMETHIUM](https://attack.mitre.org/groups/G0056) is an activity group
+  focused on espionage that has been active since at least 2012. The group has conducted
+  operations globally with a heavy emphasis on Turkish targets. [PROMETHIUM](https://attack.mitre.org/groups/G0056)
+  has demonstrated similarity to another activity group called [NEODYMIUM](https://attack.mitre.org/groups/G0055)
+  due to overlapping victim and campaign characteristics.(Citation: Microsoft NEODYMIUM
+  Dec 2016)(Citation: Microsoft SIR Vol 21)(Citation: Talos Promethium June 2020)'
+id: G0056
+name: PROMETHIUM
+reference: https://attack.mitre.org/groups/G0056
+techniques:
+- T1189
+- T1547.001
+- T1553.002
+- T1036.005
+- T1204.002
+- T1205.001
+- T1078.003
+- T1036.004
+- T1543.003
+- T1587.003
+- T1587.002

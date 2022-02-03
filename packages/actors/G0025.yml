@@ -1,0 +1,13 @@
+aliases:
+- APT17
+- Deputy Dog
+comments: '[APT17](https://attack.mitre.org/groups/G0025) is a China-based threat
+  group that has conducted network intrusions against U.S. government entities, the
+  defense industry, law firms, information technology companies, mining companies,
+  and non-government organizations. (Citation: FireEye APT17)'
+id: G0025
+name: APT17
+reference: https://attack.mitre.org/groups/G0025
+techniques:
+- T1583.006
+- T1585

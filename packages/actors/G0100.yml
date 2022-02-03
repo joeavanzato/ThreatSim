@@ -1,0 +1,36 @@
+aliases:
+- Inception
+- Inception Framework
+- Cloud Atlas
+comments: '[Inception](https://attack.mitre.org/groups/G0100) is a cyber espionage
+  group active since at least 2014. The group has targeted multiple industries and
+  governmental entities primarily in Russia, but has also been active in the United
+  States and throughout Europe, Asia, Africa, and the Middle East.(Citation: Unit
+  42 Inception November 2018)(Citation: Symantec Inception Framework March 2018)(Citation:
+  Kaspersky Cloud Atlas December 2014)'
+id: G0100
+name: Inception
+reference: https://attack.mitre.org/groups/G0100
+techniques:
+- T1566.001
+- T1082
+- T1057
+- T1102
+- T1218.010
+- T1069.002
+- T1573.001
+- T1547.001
+- T1090.003
+- T1204.002
+- T1555.003
+- T1071.001
+- T1203
+- T1083
+- T1027
+- T1221
+- T1059.005
+- T1059.001
+- T1005
+- T1218.005
+- T1518
+- T1588.002

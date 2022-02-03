@@ -1,0 +1,61 @@
+aliases:
+- Magic Hound
+- TA453
+- COBALT ILLUSION
+- Charming Kitten
+- ITG18
+- Phosphorus
+- Newscaster
+- APT35
+comments: '[Magic Hound](https://attack.mitre.org/groups/G0059) is an Iranian-sponsored
+  threat group that conducts long term, resource-intensive cyber espionage operations,
+  likely on behalf of the Islamic Revolutionary Guard Corps. They have targeted U.S.
+  and Middle Eastern government and military personnel, academics, journalists, and
+  organizations such as the World Health Organization (WHO), via complex social engineering
+  campaigns since at least 2014.(Citation: FireEye APT35 2018)(Citation: ClearSky
+  Kittens Back 3 August 2020)(Citation: Certfa Charming Kitten January 2021)(Citation:
+  Secureworks COBALT ILLUSION Threat Profile)(Citation: Proofpoint TA453 July2021)'
+id: G0059
+name: Magic Hound
+reference: https://attack.mitre.org/groups/G0059
+techniques:
+- T1043
+- T1083
+- T1105
+- T1059.005
+- T1114.001
+- T1059.003
+- T1033
+- T1016
+- T1027
+- T1082
+- T1065
+- T1560.001
+- T1547.001
+- T1059.001
+- T1070.004
+- T1057
+- T1566.002
+- T1102.002
+- T1071.001
+- T1056.001
+- T1003.001
+- T1113
+- T1564.003
+- T1071
+- T1098.002
+- T1571
+- T1566.003
+- T1589.001
+- T1585.002
+- T1586.002
+- T1114
+- T1598.003
+- T1583.001
+- T1584.001
+- T1585.001
+- T1204.002
+- T1204.001
+- T1588.002
+- T1589
+- T1589.002

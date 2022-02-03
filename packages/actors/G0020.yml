@@ -1,0 +1,15 @@
+aliases:
+- Equation
+comments: '[Equation](https://attack.mitre.org/groups/G0020) is a sophisticated threat
+  group that employs multiple remote access tools. The group is known to use zero-day
+  exploits and has developed the capability to overwrite the firmware of hard disk
+  drives. (Citation: Kaspersky Equation QA)'
+id: G0020
+name: Equation
+reference: https://attack.mitre.org/groups/G0020
+techniques:
+- T1109
+- T1480.001
+- T1120
+- T1542.002
+- T1564.005

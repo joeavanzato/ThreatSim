@@ -1,0 +1,17 @@
+aliases:
+- IndigoZebra
+comments: '[IndigoZebra](https://attack.mitre.org/groups/G0136) is a suspected Chinese
+  cyber espionage group that has been targeting Central Asian governments since at
+  least 2014.(Citation: HackerNews IndigoZebra July 2021)(Citation: Checkpoint IndigoZebra
+  July 2021)(Citation: Securelist APT Trends Q2 2017)'
+id: G0136
+name: IndigoZebra
+reference: https://attack.mitre.org/groups/G0136
+techniques:
+- T1583.006
+- T1566.001
+- T1204.002
+- T1588.002
+- T1583.001
+- T1105
+- T1586.002

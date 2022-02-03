@@ -1,0 +1,87 @@
+aliases:
+- Lazarus Group
+- HIDDEN COBRA
+- Guardians of Peace
+- ZINC
+- NICKEL ACADEMY
+comments: '[Lazarus Group](https://attack.mitre.org/groups/G0032) is a North Korean
+  state-sponsored cyber threat group that has been attributed to the Reconnaissance
+  General Bureau.(Citation: US-CERT HIDDEN COBRA June 2017)(Citation: Treasury North
+  Korean Cyber Groups September 2019) The group has been active since at least 2009
+  and was reportedly responsible for the November 2014 destructive wiper attack against
+  Sony Pictures Entertainment as part of a campaign named Operation Blockbuster by
+  Novetta. Malware used by [Lazarus Group](https://attack.mitre.org/groups/G0032)
+  correlates to other reported campaigns, including Operation Flame, Operation 1Mission,
+  Operation Troy, DarkSeoul, and Ten Days of Rain. (Citation: Novetta Blockbuster)
+
+
+  North Korean group definitions are known to have significant overlap, and some security
+  researchers report all North Korean state-sponsored cyber activity under the name
+  [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters
+  or subgroups, such as [Andariel](https://attack.mitre.org/groups/G0138), [APT37](https://attack.mitre.org/groups/G0067),
+  [APT38](https://attack.mitre.org/groups/G0082), and [Kimsuky](https://attack.mitre.org/groups/G0094).   '
+id: G0032
+name: Lazarus Group
+reference: https://attack.mitre.org/groups/G0032
+techniques:
+- T1134.002
+- T1098
+- T1189
+- T1564.001
+- T1055.001
+- T1218.001
+- T1542.003
+- T1021.001
+- T1070.004
+- T1547.001
+- T1566.001
+- T1074.001
+- T1132.001
+- T1056.001
+- T1043
+- T1041
+- T1027
+- T1083
+- T1033
+- T1562.001
+- T1070.006
+- T1071.001
+- T1124
+- T1005
+- T1547.009
+- T1010
+- T1203
+- T1016
+- T1543.003
+- T1012
+- T1047
+- T1057
+- T1105
+- T1560
+- T1090.002
+- T1021.002
+- T1008
+- T1110.003
+- T1204.002
+- T1065
+- T1026
+- T1560.002
+- T1573.001
+- T1082
+- T1048.003
+- T1489
+- T1561.002
+- T1561.001
+- T1485
+- T1529
+- T1059.003
+- T1001.003
+- T1562.004
+- T1491.001
+- T1560.003
+- T1571
+- T1583.001
+- T1587.001
+- T1588.004
+- T1583.006
+- T1036.005

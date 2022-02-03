@@ -1,0 +1,49 @@
+aliases:
+- Ke3chang
+- APT15
+- Mirage
+- Vixen Panda
+- GREF
+- Playful Dragon
+- RoyalAPT
+comments: '[Ke3chang](https://attack.mitre.org/groups/G0004) is a threat group attributed
+  to actors operating out of China. [Ke3chang](https://attack.mitre.org/groups/G0004)
+  has targeted several industries, including oil, government, military, and more.(Citation:
+  Mandiant Operation Ke3chang November 2014)(Citation: NCC Group APT15 Alive and Strong)(Citation:
+  APT15 Intezer June 2018)'
+id: G0004
+name: Ke3chang
+reference: https://attack.mitre.org/groups/G0004
+techniques:
+- T1005
+- T1007
+- T1560.001
+- T1082
+- T1069.002
+- T1087.002
+- T1114.002
+- T1018
+- T1016
+- T1003.001
+- T1059
+- T1558.001
+- T1021.002
+- T1083
+- T1543.003
+- T1133
+- T1213.002
+- T1547.001
+- T1057
+- T1041
+- T1049
+- T1059.003
+- T1071.001
+- T1056.001
+- T1560
+- T1569.002
+- T1036.002
+- T1071.004
+- T1087.001
+- T1003.002
+- T1003.004
+- T1588.002

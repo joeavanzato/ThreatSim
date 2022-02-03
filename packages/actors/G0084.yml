@@ -1,0 +1,16 @@
+aliases:
+- Gallmaker
+comments: '[Gallmaker](https://attack.mitre.org/groups/G0084) is a cyberespionage
+  group that has targeted victims in the Middle East and has been active since at
+  least December 2017. The group has mainly targeted victims in the defense, military,
+  and government sectors.(Citation: Symantec Gallmaker Oct 2018)'
+id: G0084
+name: Gallmaker
+reference: https://attack.mitre.org/groups/G0084
+techniques:
+- T1566.001
+- T1204.002
+- T1027
+- T1559.002
+- T1059.001
+- T1560.001

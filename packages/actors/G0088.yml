@@ -1,0 +1,31 @@
+aliases:
+- TEMP.Veles
+- XENOTIME
+comments: '[TEMP.Veles](https://attack.mitre.org/groups/G0088) is a Russia-based threat
+  group that has targeted critical infrastructure. The group has been observed utilizing
+  [TRITON](https://attack.mitre.org/software/S0609), a malware framework designed
+  to manipulate industrial safety systems.(Citation: FireEye TRITON 2019)(Citation:
+  FireEye TEMP.Veles 2018)(Citation: FireEye TEMP.Veles JSON April 2019)'
+id: G0088
+name: TEMP.Veles
+reference: https://attack.mitre.org/groups/G0088
+techniques:
+- T1036.005
+- T1003.001
+- T1546.012
+- T1053.005
+- T1070.006
+- T1070.004
+- T1074.001
+- T1021.004
+- T1078
+- T1021.001
+- T1133
+- T1505.003
+- T1065
+- T1043
+- T1059.001
+- T1027.005
+- T1571
+- T1583.003
+- T1588.002

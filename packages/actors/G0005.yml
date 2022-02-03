@@ -1,0 +1,19 @@
+aliases:
+- APT12
+- IXESHE
+- DynCalc
+- Numbered Panda
+- DNSCALC
+comments: '[APT12](https://attack.mitre.org/groups/G0005) is a threat group that has
+  been attributed to China. The group has targeted a variety of victims including
+  but not limited to media outlets, high-tech companies, and multiple governments.(Citation:
+  Meyers Numbered Panda)'
+id: G0005
+name: APT12
+reference: https://attack.mitre.org/groups/G0005
+techniques:
+- T1204.002
+- T1203
+- T1566.001
+- T1102.002
+- T1568.003

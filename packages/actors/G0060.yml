@@ -1,0 +1,54 @@
+aliases:
+- BRONZE BUTLER
+- REDBALDKNIGHT
+- Tick
+comments: '[BRONZE BUTLER](https://attack.mitre.org/groups/G0060) is a cyber espionage
+  group with likely Chinese origins that has been active since at least 2008. The
+  group primarily targets Japanese organizations, particularly those in government,
+  biotechnology, electronics manufacturing, and industrial chemistry.(Citation: Trend
+  Micro Daserf Nov 2017)(Citation: Secureworks BRONZE BUTLER Oct 2017)(Citation: Trend
+  Micro Tick November 2019)'
+id: G0060
+name: BRONZE BUTLER
+reference: https://attack.mitre.org/groups/G0060
+techniques:
+- T1560.001
+- T1204.002
+- T1548.002
+- T1053.002
+- T1036.005
+- T1102.001
+- T1083
+- T1113
+- T1071.001
+- T1189
+- T1003.001
+- T1140
+- T1087.002
+- T1070.004
+- T1018
+- T1005
+- T1124
+- T1059.003
+- T1203
+- T1105
+- T1547.001
+- T1573.001
+- T1027.001
+- T1550.003
+- T1566.001
+- T1132.001
+- T1039
+- T1059.001
+- T1053.005
+- T1059.005
+- T1080
+- T1036.002
+- T1059.006
+- T1036
+- T1518
+- T1027.003
+- T1562.001
+- T1007
+- T1574.002
+- T1588.002

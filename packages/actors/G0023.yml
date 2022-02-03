@@ -1,0 +1,10 @@
+aliases:
+- APT16
+comments: '[APT16](https://attack.mitre.org/groups/G0023) is a China-based threat
+  group that has launched spearphishing campaigns targeting Japanese and Taiwanese
+  organizations. (Citation: FireEye EPS Awakens Part 2)'
+id: G0023
+name: APT16
+reference: https://attack.mitre.org/groups/G0023
+techniques:
+- T1584.004

@@ -1,0 +1,24 @@
+aliases:
+- Carbanak
+- Anunak
+comments: '[Carbanak](https://attack.mitre.org/groups/G0008) is a cybercriminal group
+  that has used [Carbanak](https://attack.mitre.org/software/S0030) malware to target
+  financial institutions since at least 2013. [Carbanak](https://attack.mitre.org/groups/G0008)
+  may be linked to groups tracked separately as [Cobalt Group](https://attack.mitre.org/groups/G0080)
+  and [FIN7](https://attack.mitre.org/groups/G0046) that have also used [Carbanak](https://attack.mitre.org/software/S0030)
+  malware.(Citation: Kaspersky Carbanak)(Citation: FireEye FIN7 April 2017)(Citation:
+  Europol Cobalt Mar 2018)(Citation: Secureworks GOLD NIAGARA Threat Profile)(Citation:
+  Secureworks GOLD KINGSWOOD Threat Profile)'
+id: G0008
+name: Carbanak
+reference: https://attack.mitre.org/groups/G0008
+techniques:
+- T1036.005
+- T1078
+- T1543.003
+- T1102.002
+- T1218.011
+- T1562.004
+- T1219
+- T1036.004
+- T1588.002

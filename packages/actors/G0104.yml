@@ -1,0 +1,19 @@
+aliases:
+- Sharpshooter
+comments: 'Operation [Sharpshooter](https://attack.mitre.org/groups/G0104) is the
+  name of a cyber espionage campaign discovered in October 2018 targeting nuclear,
+  defense, energy, and financial companies. Though overlaps between this adversary
+  and [Lazarus Group](https://attack.mitre.org/groups/G0032) have been noted, definitive
+  links have not been established.(Citation: McAfee Sharpshooter December 2018)'
+id: G0104
+name: Sharpshooter
+reference: https://attack.mitre.org/groups/G0104
+techniques:
+- T1547.001
+- T1106
+- T1059.005
+- T1105
+- T1055
+- T1204.002
+- T1566.001
+- T1559.002

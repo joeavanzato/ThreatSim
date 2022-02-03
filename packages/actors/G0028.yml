@@ -1,0 +1,14 @@
+aliases:
+- Threat Group-1314
+- TG-1314
+comments: '[Threat Group-1314](https://attack.mitre.org/groups/G0028) is an unattributed
+  threat group that has used compromised credentials to log into a victim''s remote
+  access infrastructure. (Citation: Dell TG-1314)'
+id: G0028
+name: Threat Group-1314
+reference: https://attack.mitre.org/groups/G0028
+techniques:
+- T1059.003
+- T1021.002
+- T1078.002
+- T1072

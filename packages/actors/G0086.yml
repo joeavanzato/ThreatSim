@@ -1,0 +1,15 @@
+aliases: []
+comments: null
+id: G0086
+name: Stolen Pencil
+reference: https://attack.mitre.org/groups/G0086
+techniques:
+- T1003.001
+- T1040
+- T1078.003
+- T1056.001
+- T1021.001
+- T1176
+- T1566.002
+- T1552.001
+- T1555.003

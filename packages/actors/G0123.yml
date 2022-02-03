@@ -1,0 +1,16 @@
+aliases:
+- Volatile Cedar
+- Lebanese Cedar
+comments: '[Volatile Cedar](https://attack.mitre.org/groups/G0123) is a Lebanese threat
+  group that has targeted individuals, companies, and institutions worldwide. [Volatile
+  Cedar](https://attack.mitre.org/groups/G0123) has been operating since 2012 and
+  is motivated by political and ideological interests.(Citation: CheckPoint Volatile
+  Cedar March 2015)(Citation: ClearSky Lebanese Cedar Jan 2021)'
+id: G0123
+name: Volatile Cedar
+reference: https://attack.mitre.org/groups/G0123
+techniques:
+- T1595.002
+- T1505.003
+- T1190
+- T1105

@@ -1,0 +1,20 @@
+aliases:
+- DarkVishnya
+comments: '[DarkVishnya](https://attack.mitre.org/groups/G0105) is a financially motivated
+  threat actor targeting financial institutions in Eastern Europe. In 2017-2018 the
+  group attacked at least 8 banks in this region.(Citation: Securelist DarkVishnya
+  Dec 2018)'
+id: G0105
+name: DarkVishnya
+reference: https://attack.mitre.org/groups/G0105
+techniques:
+- T1200
+- T1135
+- T1571
+- T1543.003
+- T1059.001
+- T1219
+- T1040
+- T1110
+- T1046
+- T1588.002

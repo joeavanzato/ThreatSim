@@ -1,0 +1,26 @@
+aliases:
+- FIN4
+comments: '[FIN4](https://attack.mitre.org/groups/G0085) is a financially-motivated
+  threat group that has targeted confidential information related to the public financial
+  market, particularly regarding healthcare and pharmaceutical companies, since at
+  least 2013.(Citation: FireEye Hacking FIN4 Dec 2014)(Citation: FireEye FIN4 Stealing
+  Insider NOV 2014) [FIN4](https://attack.mitre.org/groups/G0085) is unique in that
+  they do not infect victims with typical persistent malware, but rather they focus
+  on capturing credentials authorized to access email and other non-public correspondence.(Citation:
+  FireEye Hacking FIN4 Dec 2014)(Citation: FireEye Hacking FIN4 Video Dec 2014)'
+id: G0085
+name: FIN4
+reference: https://attack.mitre.org/groups/G0085
+techniques:
+- T1204.002
+- T1056.002
+- T1078
+- T1090.003
+- T1114.002
+- T1566.001
+- T1071.001
+- T1566.002
+- T1056.001
+- T1059.005
+- T1564.008
+- T1204.001

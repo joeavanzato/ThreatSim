@@ -1,0 +1,69 @@
+aliases:
+- APT3
+- Gothic Panda
+- Pirpi
+- UPS Team
+- Buckeye
+- Threat Group-0110
+- TG-0110
+comments: '[APT3](https://attack.mitre.org/groups/G0022) is a China-based threat group
+  that researchers have attributed to China''s Ministry of State Security.(Citation:
+  FireEye Clandestine Wolf)(Citation: Recorded Future APT3 May 2017) This group is
+  responsible for the campaigns known as Operation Clandestine Fox, Operation Clandestine
+  Wolf, and Operation Double Tap.(Citation: FireEye Clandestine Wolf)(Citation: FireEye
+  Operation Double Tap) As of June 2015, the group appears to have shifted from targeting
+  primarily US victims to primarily political organizations in Hong Kong.(Citation:
+  Symantec Buckeye)
+
+
+  In 2017, MITRE developed an APT3 Adversary Emulation Plan.(Citation: APT3 Adversary
+  Emulation Plan)'
+id: G0022
+name: APT3
+reference: https://attack.mitre.org/groups/G0022
+techniques:
+- T1074.001
+- T1087.001
+- T1056.001
+- T1016
+- T1546.008
+- T1021.001
+- T1005
+- T1053.005
+- T1083
+- T1105
+- T1090.002
+- T1018
+- T1065
+- T1059.003
+- T1078.002
+- T1069
+- T1057
+- T1003.001
+- T1059.001
+- T1543.003
+- T1104
+- T1049
+- T1041
+- T1218.011
+- T1027.002
+- T1095
+- T1027
+- T1033
+- T1136.001
+- T1560.001
+- T1027.005
+- T1043
+- T1082
+- T1098
+- T1547.001
+- T1021.002
+- T1574.002
+- T1110.002
+- T1070.004
+- T1552.001
+- T1564.003
+- T1555.003
+- T1203
+- T1204.001
+- T1566.002

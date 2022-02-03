@@ -1,0 +1,20 @@
+aliases:
+- Evilnum
+comments: '[Evilnum](https://attack.mitre.org/groups/G0120) is a financially motivated
+  threat group that has been active since at least 2018.(Citation: ESET EvilNum July
+  2020)'
+id: G0120
+name: Evilnum
+reference: https://attack.mitre.org/groups/G0120
+techniques:
+- T1539
+- T1204.001
+- T1566.002
+- T1555
+- T1059.007
+- T1070.004
+- T1548.002
+- T1497.001
+- T1219
+- T1574.001
+- T1105

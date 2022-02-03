@@ -1,0 +1,59 @@
+aliases:
+- TeamTNT
+comments: '[TeamTNT](https://attack.mitre.org/groups/G0139) is a threat group that
+  has primarily targeted cloud and containerized environments. The group as been active
+  since at least October 2019 and has mainly focused its efforts on leveraging cloud
+  and container resources to deploy cryptocurrency miners in victim environments.
+  (Citation: Palo Alto Black-T October 2020)(Citation: Lacework TeamTNT May 2021)(Citation:
+  Intezer TeamTNT September 2020)(Citation: Cado Security TeamTNT Worm August 2020)(Citation:
+  Unit 42 Hildegard Malware)(Citation: Trend Micro TeamTNT)(Citation: ATT TeamTNT
+  Chimaera September 2020)(Citation: Aqua TeamTNT August 2020)(Citation: Intezer TeamTNT
+  Explosion September 2021)'
+id: G0139
+name: TeamTNT
+reference: https://attack.mitre.org/groups/G0139
+techniques:
+- T1562.004
+- T1070.002
+- T1102
+- T1070.004
+- T1562.001
+- T1098.004
+- T1082
+- T1518.001
+- T1547.001
+- T1059.001
+- T1059.003
+- T1071
+- T1059.004
+- T1543.003
+- T1027.002
+- T1222.002
+- T1016
+- T1595.002
+- T1543.002
+- T1595.001
+- T1014
+- T1552.005
+- T1027
+- T1057
+- T1613
+- T1049
+- T1070.003
+- T1071.001
+- T1610
+- T1583.001
+- T1219
+- T1552.001
+- T1204.003
+- T1136.001
+- T1608.001
+- T1046
+- T1496
+- T1021.004
+- T1133
+- T1609
+- T1611
+- T1587.001
+- T1105
+- T1552.004

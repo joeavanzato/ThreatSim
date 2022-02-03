@@ -1,0 +1,55 @@
+aliases:
+- Mustang Panda
+- TA416
+- RedDelta
+- BRONZE PRESIDENT
+comments: '[Mustang Panda](https://attack.mitre.org/groups/G0129) is a China-based
+  cyber espionage threat actor that was first observed in 2017 but may have been conducting
+  operations since at least 2014. [Mustang Panda](https://attack.mitre.org/groups/G0129)
+  has targeted government entities, nonprofits, religious, and other non-governmental
+  organizations in the U.S., Germany, Mongolia, Myanmar, Pakistan, and Vietnam, among
+  others.(Citation: Crowdstrike MUSTANG PANDA June 2018)(Citation: Anomali MUSTANG
+  PANDA October 2019)(Citation: Secureworks BRONZE PRESIDENT December 2019) '
+id: G0129
+name: Mustang Panda
+reference: https://attack.mitre.org/groups/G0129
+techniques:
+- T1027
+- T1059.005
+- T1059.001
+- T1204.002
+- T1203
+- T1204.001
+- T1071.001
+- T1053.005
+- T1047
+- T1574.002
+- T1059.003
+- T1518
+- T1560.001
+- T1218.005
+- T1546.003
+- T1583.001
+- T1070.004
+- T1074.001
+- T1219
+- T1003.003
+- T1119
+- T1566.002
+- T1083
+- T1564.001
+- T1105
+- T1057
+- T1036.005
+- T1547.001
+- T1027.001
+- T1573.001
+- T1016
+- T1082
+- T1566.001
+- T1049
+- T1052.001
+- T1091
+- T1218.004
+- T1560.003
+- T1036.007

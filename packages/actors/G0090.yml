@@ -1,0 +1,16 @@
+aliases:
+- WIRTE
+comments: '[WIRTE](https://attack.mitre.org/groups/G0090) is a threat group that has
+  been active since at least August 2018. The group focuses on targeting Middle East
+  defense and diplomats.(Citation: Lab52 WIRTE Apr 2019)'
+id: G0090
+name: WIRTE
+reference: https://attack.mitre.org/groups/G0090
+techniques:
+- T1071.001
+- T1059.005
+- T1059.001
+- T1105
+- T1218.010
+- T1140
+- T1588.002

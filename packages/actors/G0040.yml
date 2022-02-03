@@ -1,0 +1,60 @@
+aliases:
+- Patchwork
+- Hangover Group
+- Dropping Elephant
+- Chinastrats
+- MONSOON
+- Operation Hangover
+comments: '[Patchwork](https://attack.mitre.org/groups/G0040) is a cyberespionage
+  group that was first observed in December 2015. While the group has not been definitively
+  attributed, circumstantial evidence suggests the group may be a pro-Indian or Indian
+  entity. [Patchwork](https://attack.mitre.org/groups/G0040) has been seen targeting
+  industries related to diplomatic and government agencies. Much of the code used
+  by this group was copied and pasted from online forums. [Patchwork](https://attack.mitre.org/groups/G0040)
+  was also seen operating spearphishing campaigns targeting U.S. think tank groups
+  in March and April of 2018. (Citation: Cymmetria Patchwork) (Citation: Symantec
+  Patchwork) (Citation: TrendMicro Patchwork Dec 2017) (Citation: Volexity Patchwork
+  June 2018)'
+id: G0040
+name: Patchwork
+reference: https://attack.mitre.org/groups/G0040
+techniques:
+- T1083
+- T1082
+- T1055.012
+- T1559.002
+- T1560
+- T1105
+- T1203
+- T1070.004
+- T1518.001
+- T1555.003
+- T1027
+- T1053.005
+- T1574.002
+- T1119
+- T1547.001
+- T1027.001
+- T1189
+- T1548.002
+- T1059.001
+- T1027.005
+- T1027.002
+- T1566.001
+- T1074.001
+- T1033
+- T1204.002
+- T1132.001
+- T1566.002
+- T1112
+- T1036.005
+- T1005
+- T1021.001
+- T1102.001
+- T1059.003
+- T1059.005
+- T1553.002
+- T1197
+- T1204.001
+- T1587.002
+- T1588.002

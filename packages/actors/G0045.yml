@@ -1,0 +1,76 @@
+aliases:
+- menuPass
+- Cicada
+- POTASSIUM
+- Stone Panda
+- APT10
+- Red Apollo
+- CVNX
+- HOGFISH
+comments: '[menuPass](https://attack.mitre.org/groups/G0045) is a threat group that
+  has been active since at least 2006. Individual members of [menuPass](https://attack.mitre.org/groups/G0045)
+  are known to have acted in association with the Chinese Ministry of State Security''s
+  (MSS) Tianjin State Security Bureau and worked for the Huaying Haitai Science and
+  Technology Development Company.(Citation: DOJ APT10 Dec 2018)(Citation: District
+  Court of NY APT10 Indictment December 2018)
+
+
+  [menuPass](https://attack.mitre.org/groups/G0045) has targeted healthcare, defense,
+  aerospace, finance, maritime, biotechnology, energy, and government sectors globally,
+  with an emphasis on Japanese organizations. In 2016 and 2017, the group is known
+  to have targeted managed IT service providers (MSPs), manufacturing and mining companies,
+  and a university.(Citation: Palo Alto menuPass Feb 2017)(Citation: Crowdstrike CrowdCast
+  Oct 2013)(Citation: FireEye Poison Ivy)(Citation: PWC Cloud Hopper April 2017)(Citation:
+  FireEye APT10 April 2017)(Citation: DOJ APT10 Dec 2018)(Citation: District Court
+  of NY APT10 Indictment December 2018)'
+id: G0045
+name: menuPass
+reference: https://attack.mitre.org/groups/G0045
+techniques:
+- T1047
+- T1003.002
+- T1078
+- T1016
+- T1039
+- T1087.002
+- T1027
+- T1049
+- T1204.002
+- T1090.002
+- T1053.005
+- T1199
+- T1059.003
+- T1574.001
+- T1055.012
+- T1140
+- T1566.001
+- T1074.001
+- T1021.001
+- T1574.002
+- T1018
+- T1070.004
+- T1105
+- T1021.004
+- T1059.001
+- T1560.001
+- T1046
+- T1036.005
+- T1560
+- T1005
+- T1056.001
+- T1074.002
+- T1036
+- T1036.003
+- T1003.004
+- T1218.004
+- T1119
+- T1210
+- T1003.003
+- T1106
+- T1083
+- T1583.001
+- T1568.001
+- T1588.002
+- T1190
+- T1553.002
+- T1070.003

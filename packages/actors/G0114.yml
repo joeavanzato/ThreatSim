@@ -1,0 +1,69 @@
+aliases:
+- Chimera
+comments: '[Chimera](https://attack.mitre.org/groups/G0114) is a suspected China-based
+  threat group that has been active since at least 2018 targeting the semiconductor
+  industry in Taiwan as well as data from the airline industry.(Citation: Cycraft
+  Chimera April 2020)(Citation: NCC Group Chimera January 2021)'
+id: G0114
+name: Chimera
+reference: https://attack.mitre.org/groups/G0114
+techniques:
+- T1021.001
+- T1560.001
+- T1105
+- T1078
+- T1047
+- T1087.002
+- T1003.003
+- T1036.005
+- T1556.001
+- T1027
+- T1059.001
+- T1053.005
+- T1133
+- T1106
+- T1021.002
+- T1110.004
+- T1589.001
+- T1110.003
+- T1078.002
+- T1135
+- T1018
+- T1083
+- T1482
+- T1041
+- T1074.002
+- T1567.002
+- T1069.001
+- T1070.006
+- T1070.001
+- T1049
+- T1201
+- T1046
+- T1021.006
+- T1570
+- T1213.002
+- T1114.002
+- T1114.001
+- T1074.001
+- T1574.002
+- T1071.004
+- T1569.002
+- T1059.003
+- T1071.001
+- T1550.002
+- T1111
+- T1087.001
+- T1119
+- T1217
+- T1012
+- T1057
+- T1082
+- T1016
+- T1033
+- T1124
+- T1007
+- T1039
+- T1572
+- T1070.004
+- T1588.002

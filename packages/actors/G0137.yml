@@ -1,0 +1,15 @@
+aliases:
+- Ferocious Kitten
+comments: '[Ferocious Kitten](https://attack.mitre.org/groups/G0137) is a threat group
+  that has primarily targeted Persian-speaking individuals in Iran since at least
+  2015.(Citation: Kaspersky Ferocious Kitten Jun 2021)'
+id: G0137
+name: Ferocious Kitten
+reference: https://attack.mitre.org/groups/G0137
+techniques:
+- T1583.001
+- T1036.005
+- T1036.002
+- T1204.002
+- T1566.001
+- T1588.002

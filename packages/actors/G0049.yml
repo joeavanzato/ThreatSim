@@ -1,35 +1,80 @@
-
----
-random:
-   id: random
-   name: 'Random Threat Actor'
-   aliases:
-      - None
-   comments: None
-   reference: None
-   steps:
-      - step_1:
-           - local_user_discovery_1
-           - local_user_discovery_2
-           - local_user_discovery_3
-           - local_user_discovery_4
-           - local_user_discovery_5
-           - local_user_discovery_6
-           - local_user_discovery_7
-      - step_2:
-G0049:
-   id: G0049
-   name: 'APT34'
-   aliases:
-      - OilRig
-      - IRN2
-      - Helix Kitten
-   comments: 'None'
-   reference: 'https://attack.mitre.org/groups/G0049/'
-   steps:
-      - step_1:
-           - scheduled_task_local_1
-           - local_admin_discovery_1
-           - domain_admin_discovery_1
-           - credential_discovery_1
-      - step_2:
+aliases:
+- OilRig
+- COBALT GYPSY
+- IRN2
+- HELIX KITTEN
+- APT34
+comments: '[OilRig](https://attack.mitre.org/groups/G0049) is a suspected Iranian
+  threat group that has targeted Middle Eastern and international victims since at
+  least 2014. The group has targeted a variety of sectors, including financial, government,
+  energy, chemical, and telecommunications. It appears the group carries out supply
+  chain attacks, leveraging the trust relationship between organizations to attack
+  their primary targets. FireEye assesses that the group works on behalf of the Iranian
+  government based on infrastructure details that contain references to Iran, use
+  of Iranian infrastructure, and targeting that aligns with nation-state interests.
+  (Citation: Palo Alto OilRig April 2017) (Citation: ClearSky OilRig Jan 2017) (Citation:
+  Palo Alto OilRig May 2016) (Citation: Palo Alto OilRig Oct 2016) (Citation: Unit
+  42 Playbook Dec 2017) (Citation: FireEye APT34 Dec 2017)(Citation: Unit 42 QUADAGENT
+  July 2018)'
+id: G0049
+name: OilRig
+reference: https://attack.mitre.org/groups/G0049
+techniques:
+- T1057
+- T1140
+- T1094
+- T1119
+- T1070.004
+- T1113
+- T1021.004
+- T1069.001
+- T1046
+- T1059
+- T1133
+- T1021.001
+- T1047
+- T1053.005
+- T1049
+- T1007
+- T1016
+- T1012
+- T1056.001
+- T1082
+- T1087.002
+- T1110
+- T1048.003
+- T1566.001
+- T1204.002
+- T1027
+- T1059.001
+- T1071.001
+- T1505.003
+- T1027.005
+- T1033
+- T1003.001
+- T1566.002
+- T1008
+- T1201
+- T1218.001
+- T1078
+- T1105
+- T1573.002
+- T1552.001
+- T1043
+- T1566.003
+- T1572
+- T1071.004
+- T1204.001
+- T1087.001
+- T1069.002
+- T1003.004
+- T1003.005
+- T1555
+- T1555.003
+- T1059.003
+- T1137.004
+- T1555.004
+- T1036
+- T1497.001
+- T1059.005
+- T1120

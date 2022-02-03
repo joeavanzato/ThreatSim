@@ -1,0 +1,25 @@
+aliases:
+- BackdoorDiplomacy
+comments: '[BackdoorDiplomacy](https://attack.mitre.org/groups/G0135) is a cyber espionage
+  threat group that has been active since at least 2017. [BackdoorDiplomacy](https://attack.mitre.org/groups/G0135)
+  has targeted Ministries of Foreign Affairs and telecommunication companies in Africa,
+  Europe, the Middle East, and Asia.(Citation: ESET BackdoorDiplomacy Jun 2021)'
+id: G0135
+name: BackdoorDiplomacy
+reference: https://attack.mitre.org/groups/G0135
+techniques:
+- T1055.001
+- T1588.001
+- T1574.001
+- T1105
+- T1095
+- T1046
+- T1190
+- T1036.005
+- T1027
+- T1049
+- T1588.002
+- T1036.004
+- T1505.003
+- T1120
+- T1074.001

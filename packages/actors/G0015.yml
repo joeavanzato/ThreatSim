@@ -1,0 +1,9 @@
+aliases:
+- Taidoor
+comments: '[Taidoor](https://attack.mitre.org/groups/G0015) has been deprecated, as
+  the only technique it was linked to was deprecated in ATT&CK v7.'
+id: G0015
+name: Taidoor
+reference: https://attack.mitre.org/groups/G0015
+techniques:
+- T1032

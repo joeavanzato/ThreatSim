@@ -1,0 +1,11 @@
+aliases:
+- Lotus Blossom
+- DRAGONFISH
+- Spring Dragon
+comments: '[Lotus Blossom](https://attack.mitre.org/groups/G0030) is a threat group
+  that has targeted government and military organizations in Southeast Asia. (Citation:
+  Lotus Blossom Jun 2015)'
+id: G0030
+name: Lotus Blossom
+reference: https://attack.mitre.org/groups/G0030
+techniques: []

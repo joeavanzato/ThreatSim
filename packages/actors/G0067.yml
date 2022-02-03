@@ -1,0 +1,57 @@
+aliases:
+- APT37
+- Richochet Chollima
+- InkySquid
+- ScarCruft
+- Reaper
+- Group123
+- TEMP.Reaper
+comments: '[APT37](https://attack.mitre.org/groups/G0067) is a North Korean state-sponsored
+  cyber espionage group that has been active since at least 2012. The group has targeted
+  victims primarily in South Korea, but also in Japan, Vietnam, Russia, Nepal, China,
+  India, Romania, Kuwait, and other parts of the Middle East. [APT37](https://attack.mitre.org/groups/G0067)
+  has also been linked to the following campaigns between 2016-2018: Operation Daybreak,
+  Operation Erebus, Golden Time, Evil New Year, Are you Happy?, FreeMilk, North Korean
+  Human Rights, and Evil New Year 2018.(Citation: FireEye APT37 Feb 2018)(Citation:
+  Securelist ScarCruft Jun 2016)(Citation: Talos Group123)
+
+
+  North Korean group definitions are known to have significant overlap, and some security
+  researchers report all North Korean state-sponsored cyber activity under the name
+  [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters
+  or subgroups.'
+id: G0067
+name: APT37
+reference: https://attack.mitre.org/groups/G0067
+techniques:
+- T1203
+- T1057
+- T1005
+- T1204.002
+- T1059.003
+- T1555.003
+- T1082
+- T1033
+- T1105
+- T1123
+- T1547.001
+- T1106
+- T1094
+- T1027
+- T1566.001
+- T1055
+- T1189
+- T1071.001
+- T1561.002
+- T1102.002
+- T1043
+- T1036.001
+- T1559.002
+- T1120
+- T1548.002
+- T1529
+- T1027.003
+- T1059.005
+- T1053.005
+- T1059.006
+- T1059

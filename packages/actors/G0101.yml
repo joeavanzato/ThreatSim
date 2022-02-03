@@ -1,0 +1,36 @@
+aliases:
+- Frankenstein
+comments: '[Frankenstein](https://attack.mitre.org/groups/G0101) is a campaign carried
+  out between January and April 2019 by unknown threat actors. The campaign name comes
+  from the actors'' ability to piece together several unrelated components.(Citation:
+  Talos Frankenstein June 2019)  '
+id: G0101
+name: Frankenstein
+reference: https://attack.mitre.org/groups/G0101
+techniques:
+- T1566.001
+- T1059.001
+- T1059.003
+- T1204.002
+- T1203
+- T1053.005
+- T1221
+- T1059.005
+- T1027
+- T1127.001
+- T1047
+- T1497.001
+- T1518.001
+- T1003
+- T1016
+- T1105
+- T1041
+- T1020
+- T1057
+- T1082
+- T1573.001
+- T1033
+- T1005
+- T1119
+- T1140
+- T1588.002

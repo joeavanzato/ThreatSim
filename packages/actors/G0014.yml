@@ -1,0 +1,25 @@
+aliases:
+- Night Dragon
+comments: '[Night Dragon](https://attack.mitre.org/groups/G0014) is a campaign name
+  for activity involving a threat group that has conducted activity originating primarily
+  in China. (Citation: McAfee Night Dragon)'
+id: G0014
+name: Night Dragon
+reference: https://attack.mitre.org/groups/G0014
+techniques:
+- T1003.002
+- T1190
+- T1562.001
+- T1566.002
+- T1071.001
+- T1078
+- T1043
+- T1027
+- T1550.002
+- T1219
+- T1204.001
+- T1133
+- T1027.002
+- T1074.002
+- T1587.001
+- T1588.002

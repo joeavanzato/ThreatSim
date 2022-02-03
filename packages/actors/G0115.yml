@@ -1,0 +1,21 @@
+aliases:
+- GOLD SOUTHFIELD
+comments: '[GOLD SOUTHFIELD](https://attack.mitre.org/groups/G0115) is a financially
+  motivated threat group active since at least 2019 that operates the [REvil](https://attack.mitre.org/software/S0496)
+  Ransomware-as-a Service (RaaS). [GOLD SOUTHFIELD](https://attack.mitre.org/groups/G0115)
+  provides backend infrastructure for affiliates recruited on underground forums to
+  perpetrate high value deployments.(Citation: Secureworks REvil September 2019)(Citation:
+  Secureworks GandCrab and REvil September 2019)(Citation: Secureworks GOLD SOUTHFIELD)'
+id: G0115
+name: GOLD SOUTHFIELD
+reference: https://attack.mitre.org/groups/G0115
+techniques:
+- T1133
+- T1199
+- T1190
+- T1566
+- T1195.002
+- T1219
+- T1113
+- T1027
+- T1059.001

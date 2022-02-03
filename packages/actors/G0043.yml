@@ -1,0 +1,18 @@
+aliases:
+- Group5
+comments: '[Group5](https://attack.mitre.org/groups/G0043) is a threat group with
+  a suspected Iranian nexus, though this attribution is not definite. The group has
+  targeted individuals connected to the Syrian opposition via spearphishing and watering
+  holes, normally using Syrian and Iranian themes. [Group5](https://attack.mitre.org/groups/G0043)
+  has used two commonly available remote access tools (RATs), [njRAT](https://attack.mitre.org/software/S0385)
+  and [NanoCore](https://attack.mitre.org/software/S0336), as well as an Android RAT,
+  DroidJack. (Citation: Citizen Lab Group5)'
+id: G0043
+name: Group5
+reference: https://attack.mitre.org/groups/G0043
+techniques:
+- T1065
+- T1070.004
+- T1113
+- T1027
+- T1056.001

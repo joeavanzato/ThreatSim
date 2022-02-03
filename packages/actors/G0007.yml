@@ -1,0 +1,123 @@
+aliases:
+- APT28
+- SNAKEMACKEREL
+- Swallowtail
+- Group 74
+- Sednit
+- Sofacy
+- Pawn Storm
+- Fancy Bear
+- STRONTIUM
+- Tsar Team
+- Threat Group-4127
+- TG-4127
+comments: '[APT28](https://attack.mitre.org/groups/G0007) is a threat group that has
+  been attributed to Russia''s General Staff Main Intelligence Directorate (GRU) 85th
+  Main Special Service Center (GTsSS) military unit 26165.(Citation: NSA/FBI Drovorub
+  August 2020)(Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021)
+  This group has been active since at least 2004.(Citation: DOJ GRU Indictment Jul
+  2018)(Citation: Ars Technica GRU indictment Jul 2018)(Citation: Crowdstrike DNC
+  June 2016)(Citation: FireEye APT28)(Citation: SecureWorks TG-4127)(Citation: FireEye
+  APT28 January 2017)(Citation: GRIZZLY STEPPE JAR)(Citation: Sofacy DealersChoice)(Citation:
+  Palo Alto Sofacy 06-2018)(Citation: Symantec APT28 Oct 2018)(Citation: ESET Zebrocy
+  May 2019)
+
+
+  [APT28](https://attack.mitre.org/groups/G0007) reportedly compromised the Hillary
+  Clinton campaign, the Democratic National Committee, and the Democratic Congressional
+  Campaign Committee in 2016 in an attempt to interfere with the U.S. presidential
+  election. (Citation: Crowdstrike DNC June 2016) In 2018, the US indicted five GRU
+  Unit 26165 officers associated with [APT28](https://attack.mitre.org/groups/G0007)
+  for cyber operations (including close-access operations) conducted between 2014
+  and 2018 against the World Anti-Doping Agency (WADA), the US Anti-Doping Agency,
+  a US nuclear facility, the Organization for the Prohibition of Chemical Weapons
+  (OPCW), the Spiez Swiss Chemicals Laboratory, and other organizations.(Citation:
+  US District Court Indictment GRU Oct 2018) Some of these were conducted with the
+  assistance of GRU Unit 74455, which is also referred to as [Sandworm Team](https://attack.mitre.org/groups/G0034). '
+id: G0007
+name: APT28
+reference: https://attack.mitre.org/groups/G0007
+techniques:
+- T1001.001
+- T1091
+- T1114.002
+- T1105
+- T1559.002
+- T1564.001
+- T1070.006
+- T1566.002
+- T1120
+- T1113
+- T1083
+- T1070.001
+- T1204.002
+- T1546.015
+- T1566.001
+- T1213.002
+- T1037.001
+- T1040
+- T1542.003
+- T1068
+- T1211
+- T1119
+- T1134.001
+- T1025
+- T1074.001
+- T1550.002
+- T1078
+- T1199
+- T1218.011
+- T1071.003
+- T1059.001
+- T1092
+- T1005
+- T1003.001
+- T1070.004
+- T1027
+- T1014
+- T1560
+- T1059.003
+- T1090.002
+- T1057
+- T1210
+- T1056.001
+- T1140
+- T1203
+- T1137.002
+- T1221
+- T1573.001
+- T1043
+- T1550.001
+- T1528
+- T1564.003
+- T1071.001
+- T1003
+- T1110.003
+- T1110.001
+- T1498
+- T1190
+- T1583.001
+- T1110
+- T1102.002
+- T1547.001
+- T1090.003
+- T1595.002
+- T1567
+- T1598
+- T1589.001
+- T1204.001
+- T1588.002
+- T1505.003
+- T1078.004
+- T1098.002
+- T1021.002
+- T1003.003
+- T1039
+- T1560.001
+- T1074.002
+- T1213
+- T1048.002
+- T1030
+- T1133
+- T1036
+- T1036.005

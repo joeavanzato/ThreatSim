@@ -1,0 +1,12 @@
+aliases:
+- Dust Storm
+comments: '[Dust Storm](https://attack.mitre.org/groups/G0031) is a threat group that
+  has targeted multiple industries in Japan, South Korea, the United States, Europe,
+  and several Southeast Asian countries. (Citation: Cylance Dust Storm)'
+id: G0031
+name: Dust Storm
+reference: https://attack.mitre.org/groups/G0031
+techniques:
+- T1027
+- T1005
+- T1083

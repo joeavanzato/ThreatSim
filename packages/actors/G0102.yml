@@ -1,0 +1,63 @@
+aliases:
+- Wizard Spider
+- UNC1878
+- TEMP.MixMaster
+- Grim Spider
+comments: '[Wizard Spider](https://attack.mitre.org/groups/G0102) is a Russia-based
+  financially motivated threat group originally known for the creation and deployment
+  of [TrickBot](https://attack.mitre.org/software/S0266) since at least 2016. [Wizard
+  Spider](https://attack.mitre.org/groups/G0102) possesses a diverse arsenal of tools
+  and has conducted ransomware campaigns against a variety of organizations, ranging
+  from major corporations to hospitals.(Citation: CrowdStrike Ryuk January 2019)(Citation:
+  DHS/CISA Ransomware Targeting Healthcare October 2020)(Citation: CrowdStrike Wizard
+  Spider October 2020)'
+id: G0102
+name: Wizard Spider
+reference: https://attack.mitre.org/groups/G0102
+techniques:
+- T1566.001
+- T1112
+- T1204.002
+- T1036.004
+- T1053.005
+- T1059.001
+- T1070.004
+- T1543.003
+- T1570
+- T1021.001
+- T1041
+- T1071.001
+- T1074
+- T1027
+- T1018
+- T1078
+- T1047
+- T1055.001
+- T1003.003
+- T1204.001
+- T1566.002
+- T1558.003
+- T1021.006
+- T1135
+- T1562.001
+- T1547.001
+- T1033
+- T1078.002
+- T1133
+- T1489
+- T1048.003
+- T1059.003
+- T1082
+- T1021.002
+- T1569.002
+- T1557.001
+- T1210
+- T1518.001
+- T1547.004
+- T1003.002
+- T1553.002
+- T1588.003
+- T1222.001
+- T1016
+- T1087.002
+- T1588.002

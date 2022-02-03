@@ -1,0 +1,32 @@
+aliases:
+- Honeybee
+comments: '[Honeybee](https://attack.mitre.org/groups/G0072) is a campaign led by
+  an unknown actor that targets humanitarian aid organizations and has been active
+  in Vietnam, Singapore, Argentina, Japan, Indonesia, and Canada. It has been an active
+  operation since August of 2017 and as recently as February 2018. (Citation: McAfee
+  Honeybee)'
+id: G0072
+name: Honeybee
+reference: https://attack.mitre.org/groups/G0072
+techniques:
+- T1548.002
+- T1546.009
+- T1070.004
+- T1560
+- T1057
+- T1082
+- T1543.003
+- T1074.001
+- T1083
+- T1140
+- T1027
+- T1547.001
+- T1112
+- T1055
+- T1005
+- T1553.002
+- T1569.002
+- T1071.002
+- T1020
+- T1059.005
+- T1059.003

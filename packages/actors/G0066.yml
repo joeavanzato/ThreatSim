@@ -1,0 +1,24 @@
+aliases:
+- Elderwood
+- Elderwood Gang
+- Beijing Group
+- Sneaky Panda
+comments: '[Elderwood](https://attack.mitre.org/groups/G0066) is a suspected Chinese
+  cyber espionage group that was reportedly responsible for the 2009 Google intrusion
+  known as Operation Aurora. (Citation: Security Affairs Elderwood Sept 2012) The
+  group has targeted defense organizations, supply chain manufacturers, human rights
+  and nongovernmental organizations (NGOs), and IT service providers. (Citation: Symantec
+  Elderwood Sept 2012) (Citation: CSM Elderwood Sept 2012)'
+id: G0066
+name: Elderwood
+reference: https://attack.mitre.org/groups/G0066
+techniques:
+- T1027.002
+- T1189
+- T1566.002
+- T1027
+- T1203
+- T1566.001
+- T1204.002
+- T1105
+- T1204.001

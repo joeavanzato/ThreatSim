@@ -1,0 +1,70 @@
+aliases:
+- APT39
+- REMIX KITTEN
+- ITG07
+- Chafer
+comments: '[APT39](https://attack.mitre.org/groups/G0087) is one of several names
+  for cyberespionage activity conducted by the Iranian Ministry of Intelligence and
+  Security (MOIS) through the front company Rana Intelligence Computing since at least
+  2014. [APT39](https://attack.mitre.org/groups/G0087) has primarily targeted the
+  travel, hospitality, academic, and telecommunications industries in Iran and across
+  Asia, Africa, Europe, and North America to track individuals and entities considered
+  to be a threat by the MOIS.(Citation: FireEye APT39 Jan 2019)(Citation: Symantec
+  Chafer Dec 2015)(Citation: FBI FLASH APT39 September 2020)(Citation: Dept. of Treasury
+  Iran Sanctions September 2020)(Citation: DOJ Iran Indictments September 2020)'
+id: G0087
+name: APT39
+reference: https://attack.mitre.org/groups/G0087
+techniques:
+- T1566.001
+- T1566.002
+- T1021.001
+- T1547.001
+- T1053.005
+- T1547.009
+- T1018
+- T1560.001
+- T1090.001
+- T1003.001
+- T1059
+- T1078
+- T1046
+- T1021.004
+- T1505.003
+- T1204.002
+- T1027.002
+- T1033
+- T1204.001
+- T1110
+- T1555
+- T1090.002
+- T1136.001
+- T1569.002
+- T1135
+- T1059.001
+- T1102.002
+- T1071.004
+- T1059.006
+- T1071.001
+- T1003
+- T1021.002
+- T1105
+- T1115
+- T1005
+- T1056.001
+- T1113
+- T1190
+- T1036.005
+- T1059.005
+- T1056
+- T1012
+- T1083
+- T1197
+- T1074.001
+- T1041
+- T1070.004
+- T1027
+- T1553.006
+- T1546.010
+- T1140
+- T1588.002
