@@ -9,7 +9,6 @@ import datetime
 import deliveries.CMD_REPLACEMENTS
 import threat_actor
 
-
 def parse_args():
     arguments = {}
     parser = argparse.ArgumentParser(usage='''
@@ -28,9 +27,13 @@ def parse_args():
     args = parser.parse_args()
 
     actor_list = os.listdir('packages\\actors')
+    name_list = []
+    for item in actor_list:
+        name_list.append(os.path.splitext(item)[0])
+
     if args.actor:
-        if args.actor[0] in actor_list:
-            arguments['actor'] = f'packages\\actors\\{args.actor[0]}'
+        if args.actor[0] in name_list:
+            arguments['actor'] = f'packages\\actors\\{args.actor[0]}.yml'
         elif args.actor[0] == 'random':
             arguments['actor'] = f'packages\\actors\\{random.choice(actor_list)}'
         elif args.actor[0] == 'generic':
@@ -69,7 +72,7 @@ def read_packages():
     file = 'packages\\discovery\\local_discovery.yml'
     for root, subdirs, files in os.walk('packages'):
         for file in files:
-            if not root.endswith("mitre_mappings") and not root.endswith("actors"):
+            if not root.endswith("mitre_mappings") and not root.endswith("actors") and not root.endswith("actors_old") and not root.endswith('pyattck_techniques'):
                 package_list.append(os.path.join(root,file))
     return package_list
 
@@ -142,8 +145,8 @@ def generate_mappings(yaml_data, args):
     with open('packages\\mitre_mappings\\mappings.yml', 'w') as f:
         yaml.dump(command_list, f, allow_unicode=True)
 
-    for k,v in command_dict.items():
-        print(f"{k}: {v}")
+    #for k,v in command_dict.items():
+    #    print(f"{k}: {v}")
 
     return command_list, command_dict
 
