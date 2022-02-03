@@ -1,6 +1,12 @@
 # ThreatSim
  Threat Simulator for Enterprise Networks
 
+## Warning
+
+ThreatSim contains many different dangerous commands which can greatly impact system functionality, features and stability.  It is recommended to only run on a machine which can be immediately re-imaged or is otherwise not part of any production network.  Additionally, any target provided via the -t/--target flag should also be able to be immediately re-imaged and not part of any production network.
+
+No responsibility is taken for damages incurred on production networks through use of this software - please carefully read the license and the source code prior to execution in order to understand the potential dangers.
+
 ## What is it?
 
 ThreatSim is a blue-team utility designed to simulate modern threat-actor TTPs in order to help blue-teams identify potential gaps in logging, EDR/AV controls, SIEM/UEBA detections or otherwise.  It is possible to generate both completely randomized but logical behavior as well as to simulate actual threat actors based on known procedures.
@@ -27,9 +33,12 @@ specifically given a Username and Password when invoked [-u/--user].
 ###Replacements Available in Command Strings
 
 * Any Environment Variable in the format %VARNAME% is replaced by os module.
+* $TARGET$ - Remote Target if supplied to ThreatSim
 * $CURDIR$ - Replace with Current Working Directory
 * $RANDOMURL$ - Replace with randomly generated DGA-style URL
+* $RANDOMURL_PS1$ - Replace with randomly generated DGA-Style URL to a .PS1 script.
 * $RANDOMUSER$ - Replace with randomly generated username.
 * $RANDOMDOMAINUSER$ - Replace with randomly generated domain username.
 * $RANDOMPORTUNCOMMON$ - Replace with randomly generated uncommonly-used port.
 * $RANDOMPORTCOMMON$ - Replace with randomly generated commonly-used port.
+* $FQDN$ - Fully Qualified Domain Name (HOSTNAME (local), EXAMPLE.LAB, TEST.COM, etc)
