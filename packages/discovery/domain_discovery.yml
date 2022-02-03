@@ -49,3 +49,30 @@ commands:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1201;Password Policy Discovery'
       comments:
+   domain_controller_discovery_1:
+      remote: true
+      id: domain_controller_discovery_1
+      command: 'cmd.exe \c net group "Domain Controllers" /domain'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1018;Remote System Discovery'
+      comments:
+   network_system_discovery_net_1:
+      remote: true
+      id: network_system_discovery_net_1
+      command: 'cmd.exe \c net view'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1018;Remote System Discovery'
+      comments:
+   system_time_discovery_2:
+      remote: true
+      id: system_time_discovery_2
+      command: 'cmd.exe /c net time \$TARGET$'
+      stealth: high
+      mitre:
+         - 'Discovery;T1124;System Time Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:

