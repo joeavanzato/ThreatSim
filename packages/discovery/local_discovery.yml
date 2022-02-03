@@ -275,7 +275,7 @@ commands:
    systeminfo_ver_1:
       remote: false
       id: systeminfo_ver_1
-      command: 'cmd.exe /c ver > %temp%\ver.txt & systeminfo > %temp%\sys.txt'
+      command: 'cmd.exe /c ver > %temp%\ver.txt & cmd.exe /c systeminfo > %temp%\sys.txt'
       stealth: high
       mitre:
          - 'Discovery;T1082;System Information Discovery'
@@ -401,4 +401,13 @@ commands:
          - 'Discovery;T1497.001;Virtualization/Sandbox Evasion: System Checks'
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   system_info_discovery_dir_1:
+      remote: false
+      id: system_info_discovery_dir_1
+      command: 'cmd.exe /c dir "c:\users" >> %temp%\info.txt & cmd.exe /c dir "c:\Program Files" >> %temp%\info.txt'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1083;File and Directory Discovery'
       comments:
