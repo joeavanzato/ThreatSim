@@ -59,15 +59,16 @@ def generate_mappings(yaml_data):
                     index = "None"
                     for i in range(len(command_list)):
                         if technique_id == command_list[i]['technique_id']:
-                            print(f"INSERTING: {string_data['commands'][item]['id']} INTO {command_list[i]['technique_id']}")
                             index = i
                             break
                         else:
                             pass
                     if index != "None":
                         if not string_data['commands'][item]['id'] in command_list[i]['commands']:
+                            print(f"INSERTING: {string_data['commands'][item]['id']} INTO {command_list[i]['technique_id']}")
                             command_list[i]['commands'].append(string_data['commands'][item]['id'])
                     else:
+                        print(f"INSERTING: {string_data['commands'][item]['id']} INTO {technique_dict['technique_id']}")
                         command_list.append(technique_dict)
             except TypeError:
                 print(f"Error MITRE Processing: {string_data['commands'][item]['id']}")

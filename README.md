@@ -17,3 +17,7 @@ specifically given a Username and Password when invoked [-u/--user].
 
 commands.yml -> Contains MITRE mapped commands
 actor_patterns.yml -> Sequences of commands by ID associated with threat actors, referencing commands.yml
+
+REPLACEMENTS in Command Strings
+
+$CURDIR$

