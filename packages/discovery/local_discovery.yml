@@ -66,6 +66,16 @@ commands:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.001;Account Discovery: Local Account'
       comments:
+   local_user_discovery_whoami_all:
+      remote: false
+      id: local_user_discovery_whoami_all
+      command: 'cmd.exe \c whoami /all'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1033;System Owner/User Discovery'
+         - 'Discovery;T1087.001;Account Discovery: Local Account'
+      comments:
    local_system_discovery_wmic_qfe:
       remote: false
       id: local_system_discovery_wmic_qfe
@@ -131,4 +141,186 @@ commands:
       mitre:
          - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
          - 'Discovery;T1083;File and Directory Discovery'
+      comments:
+   application_window_discovery_com:
+      remote: false
+      id: application_window_discovery_com
+      command: 'powershell -Command "[activator]::CreateInstance([type]::GetTypeFromCLSID(\"13709620-C279-11CE-A49E-444553540000\")).windows()"'
+      stealth: medium
+      mitre:
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+         - 'Discovery;T1010;Application Window Discovery'
+      comments:
+   application_window_discovery_ps:
+      remote: false
+      id: application_window_discovery_ps
+      command: 'powershell -Command "get-process | where-object {$_.mainwindowtitle -ne \"\"} | Select-Object mainwindowtitle"'
+      stealth: medium
+      mitre:
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+         - 'Discovery;T1010;Application Window Discovery'
+      comments:
+   group_policy_discovery_gpresult_1:
+      remote: false
+      id: group_policy_discovery_gpresult_1
+      command: 'cmd.exe /c gpresult /r > C:\threatsim\gp.txt'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1615;Group Policy Discovery'
+      comments:
+   password_policy_discsovery_net_2:
+      remote: false
+      id: password_policy_discsovery_net_2
+      command: 'cmd.exe /c net accounts'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1201;Password Policy Discovery'
+      comments:
+   peripheral_device_discovery_1:
+      remote: false
+      id: peripheral_device_discovery_1
+      command: 'powershell Get-PnpDevice -PresentOnly'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1120;Peripheral Device Discovery'
+      comments:
+   query_registry_tsvcs_1:
+      remote: false
+      id: query_registry_tsvcs_1
+      command: 'cmd.exe /c reg query "HKCU\software\microsoft\terminal server client\default"'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1012;Query Registry'
+      comments:
+   query_registry_software_2:
+      remote: false
+      id: query_registry_software_2
+      command: 'cmd.exe /c reg query "HKlm\software\microsoft\Windows\currentversion\uninstall"'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1012;Query Registry'
+      comments:
+   query_registry_proxy_3:
+      remote: false
+      id: query_registry_proxy_3
+      command: 'cmd.exe /c reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1518;Software Discovery'
+         - 'Discovery;T1012;Query Registry'
+      comments:
+   query_registry_services_4:
+      remote: false
+      id: query_registry_services_4
+      command: 'cmd.exe /c reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services"'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1012;Query Registry'
+      comments:
+   query_registry_software_5:
+      remote: false
+      id: query_registry_software_5
+      command: 'cmd.exe /c reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths"'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1518;Software Discovery'
+         - 'Discovery;T1012;Query Registry'
+      comments:
+   find_av_edr_findstr_1:
+      remote: false
+      id: find_av_edr_findstr_1
+      command: 'cmd.exe /c dir "C:\Program Files" | findstr /i "Avast McAfee TrendMicro Avira F-Secure Norton MalwareBytes drweb kaspersky"'
+      stealth: low
+      mitre:
+         - 'Discovery;T1518.001;Software Discovery: Security Software Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments: 'Scanning Program Files directory for common antivirus/EDR products.'
+   find_av_edr_ps_2:
+      remote: false
+      id: find_av_edr_ps_2
+      command: 'powershell Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct'
+      stealth: low
+      mitre:
+         - 'Discovery;T1518.001;Software Discovery: Security Software Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments: 'Checking CIM Namespace for registered AV products.'
+   systeminfo_ver_1:
+      remote: false
+      id: systeminfo_ver_1
+      command: 'ver > %temp%\ver.txt & systeminfo > %temp%\sys.txt'
+      stealth: high
+      mitre:
+         - 'Discovery;T1082;System Information Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   timezone_reg_location_1:
+      remote: false
+      id: timezone_reg_location_1
+      command: 'cmd.exe /c reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation'
+      stealth: high
+      mitre:
+         - 'Discovery;T1614;System Location Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   language_reg_location_2:
+      remote: false
+      id: language_reg_location_2
+      command: 'cmd.exe /c reg query "hklm\system\controlset001\control\nls\language" /v Installlanguage'
+      stealth: high
+      mitre:
+         - 'Discovery;T1614;System Location Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   network_config_discovery_ipconfig_1:
+      remote: false
+      id: network_config_discovery_ipconfig_1
+      command: 'cmd.exe /c ipconfig /all > %temp%\ipconfig.txt'
+      stealth: high
+      mitre:
+         - 'Discovery;T1016;System Network Configuration Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   network_config_discovery_tracert_1:
+      remote: true
+      id: network_config_discovery_tracert_1
+      command: 'cmd.exe /c tracert 8.8.8.8'
+      stealth: high
+      mitre:
+         - 'Discovery;T1016.001;System Network Configuration Discovery: Internet Connection Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   network_connections_netstat_1:
+      remote: false
+      id: network_connections_netstat_1
+      command: 'cmd.exe /c netstat -anob > %temp%\netstat.txt'
+      stealth: medium
+      mitre:
+         - 'Discovery;T1049;System Network Connections Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   network_connections_net_session_1:
+      remote: false
+      id: network_connections_net_session_1
+      command: 'cmd.exe /c net session'
+      stealth: high
+      mitre:
+         - 'Discovery;T1049;System Network Connections Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   network_connections_net_use_1:
+      remote: false
+      id: network_connections_net_use_1
+      command: 'cmd.exe /c net use'
+      stealth: high
+      mitre:
+         - 'Discovery;T1049;System Network Connections Discovery'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
       comments:

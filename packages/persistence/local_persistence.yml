@@ -35,6 +35,14 @@ commands:
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Persistence;T1136.001;Create Account: Local Account'
+   activate_guest_user_1:
+      remote: false
+      id: activate_guest_user_1
+      command: 'cmd.exe \c net user guest /active:yes'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Persistence;T1136.001;Create Account: Local Account'
       comments: 'Create a local user.'
    add_registry_run_1:
       remote: false

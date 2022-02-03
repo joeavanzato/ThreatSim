@@ -2,29 +2,50 @@
 ---
 commands:
    domain_admin_discovery_net:
-      remote: false
+      remote: true
       id: domain_admin_discovery_net
       command: 'cmd.exe \c net group "domain admins" /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.002;Account Discovery: Domain Account'
+         - 'Discovery;T1069.002;Permission Groups Discovery: Domain Groups'
       comments:
    domain_admin_discovery_dsquery:
-      remote: false
+      remote: true
       id: domain_admin_discovery_dsquery
       command: 'cmd.exe \c dsquery group "ou=Domain Admins,dc=domain,dc=com"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.002;Account Discovery: Domain Account'
+         - 'Discovery;T1069.002;Permission Groups Discovery: Domain Groups'
       comments:
    domain_account_discovery_net_all:
-      remote: false
+      remote: true
       id: domain_account_discovery_net_all
       command: 'cmd.exe \c net user /domain'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Discovery;T1087.002;Account Discovery: Domain Account'
+         - 'Discovery;T1069.002;Permission Groups Discovery: Domain Groups'
+      comments:
+   domain_trust_discovery_nltest:
+      remote: true
+      id: domain_trust_discovery_nltest
+      command: 'cmd.exe \c nltest /domain_trusts'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1482;Domain Trust Discovery'
+      comments:
+   password_policy_discsovery_net_1:
+      remote: true
+      id: password_policy_discsovery_net_1
+      command: 'cmd.exe /c net accounts /domain'
+      stealth: high
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Discovery;T1201;Password Policy Discovery'
       comments:

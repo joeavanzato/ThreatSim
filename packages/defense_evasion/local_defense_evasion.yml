@@ -28,12 +28,3 @@ commands:
          - 'Defense Evasion;T1112;Modify Registry'
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
       comments: 'Exclude threatsim.exe from TrendMicro.'
-   find_av_edr_findstr_1:
-      remote: false
-      id: find_av_edr_findstr_1
-      command: 'cmd.exe /c dir "C:\Program Files" | findstr /i "Avast McAfee TrendMicro Avira F-Secure Norton MalwareBytes drweb kaspersky"'
-      stealth: low
-      mitre:
-         - 'Discovery;T1518.001;Software Discovery: Security Software Discovery'
-         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
-      comments: 'Scanning Program Files directory for common antivirus/EDR products.'
