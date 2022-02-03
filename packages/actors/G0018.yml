@@ -1,0 +1,29 @@
+
+---
+id: G0018
+name: 'admin@338'
+aliases:
+  - None
+comments: 'admin@338 is a China-based cyber threat group. It has previously used newsworthy events as lures to deliver malware and has primarily targeted organizations involved in financial, economic, and trade policy, typically using publicly available RATs such as PoisonIvy, as well as some non-public backdoors.'
+reference: 'https://attack.mitre.org/groups/G0018/'
+steps:
+    - local_user_discovery_net_7
+    - domain_account_discovery_net_all
+    - system_info_discovery_dir_1
+    - local_user_discovery_admins_2
+    - systeminfo_ver_1
+    - network_config_discovery_ipconfig_1
+    - network_connections_netstat_1
+    - local_service_discovery_net_start
+techniques:
+  - T1087.001
+  - T1203
+  - T1083
+  - T1036.005
+  - T1069.001
+  - T1566.001
+  - T1082
+  - T1016
+  - T1049
+  - T1007
+  - T1204.002
