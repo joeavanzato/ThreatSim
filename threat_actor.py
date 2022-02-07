@@ -35,6 +35,7 @@ class Actor():
         self.actor_file = args['actor']
         self.target = args['target']
         self.remote = args['remote']
+        self.disable_av = args['disable_av']
         self.csv_fields = ['time','command', 'actor_id', 'mitre_tactic','mitre_technique','logged?','detected?','blocked?']
         self.csv_filename = binary_dir+'\\commands_executed.csv'
         self.start_csv(self.csv_filename, self.csv_fields)
@@ -44,9 +45,35 @@ class Actor():
         print(self.actor_id)
         print(self.actor_description)
 
+        if self.disable_av == True:
+            self.disable_av()
+
         if self.mode == 'techniques':
             self.choose_commands()
             self.execute()
+
+    def disable_av(self):
+        print("Disabling AV...")
+        file = 'packages\\data\\disable_av.yml'
+        with open(file, 'r') as f:
+            try:
+                data = yaml.safe_load(f)
+            except yaml.YAMLError as e:
+                print(e)
+        for item in data['commands']:
+            temp_dict = {}
+            #print(f"ID: {string_data['commands'][item]['id']}")
+            #print(f"Command: {string_data['commands'][item]['command']}")
+            try:
+                command_string = data['commands'][item]['command']
+                result = self.command_check(str(command_string)) #TESTING
+                if result == "ERROR":
+                    print("Error Executing Command")
+                else:
+                    print("Successfully Executed Command")
+            except ValueError:
+                pass
+
 
     def execute(self):
         for k in self.tactic_order:
@@ -62,7 +89,7 @@ class Actor():
                     csv_dict['actor_id'] = self.actor_id
                     csv_dict['mitre_tactic'] = k
                     self.write_row(self.csv_filename, self.csv_fields, csv_dict)
-                    result = self.command_check(str(self.command_dict[c]))
+                    result = self.command_check(str(self.command_dict[c])) #TESTING
                     if result == "ERROR":
                         print("Error Executing Command")
                     else:
@@ -100,9 +127,13 @@ class Actor():
     def command_check(self, command):
         try:
             logging.info(str(datetime.datetime.now()) + " Executing: " + str(command))
-            subprocess.run(args=command, capture_output=True, check=True)
+            subprocess.run(args=command, check=True, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             return "SUCCESS"
         except subprocess.CalledProcessError:
+            logging.exception(str(datetime.datetime.now()) + " Error Executing Command: " + str(command))
+            print(traceback.print_exc(limit=None, file=None, chain=True))
+            return "ERROR"
+        except:
             logging.exception(str(datetime.datetime.now()) + " Error Executing Command: " + str(command))
             print(traceback.print_exc(limit=None, file=None, chain=True))
             return "ERROR"
