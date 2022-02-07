@@ -1,3 +1,5 @@
+
+#pyinstaller main.py --add-data "packages;packages" --onefile --name ThreatSim
 import yaml
 import os
 import sys
@@ -34,12 +36,19 @@ def parse_args():
     parser.add_argument("-dr", "--disable_remote", action='store_true', help="Disable Techniques marked as remote=true such as Proxy/DNS Requests, Domain Queries, etc")
     parser.add_argument("-s", "--steps", help="Use Known Step-Based Patterns", action='store_true')
     parser.add_argument("-te", "--techniques", help="Use Known Technique-Based Patterns", action='store_true')
+    parser.add_argument("-dav", "--disable_av", help="Force execution of AV-Disabling Techniques prior to others.", action='store_true')
     args = parser.parse_args()
 
     actor_list = os.listdir('packages\\actors')
     name_list = []
     for item in actor_list:
         name_list.append(os.path.splitext(item)[0])
+
+    if args.disable_av:
+        arguments['disable_av'] = True
+    else:
+        arguments['disable_av'] = False
+
 
     if args.actor:
         if args.actor[0] in name_list:
@@ -82,7 +91,7 @@ def read_packages():
     file = 'packages\\discovery\\local_discovery.yml'
     for root, subdirs, files in os.walk('packages'):
         for file in files:
-            if not root.endswith("mitre_mappings") and not root.endswith("actors") and not root.endswith("actors_old") and not root.endswith('pyattck_techniques'):
+            if not root.endswith("mitre_mappings") and not root.endswith('data') and not root.endswith("actors") and not root.endswith("actors_old") and not root.endswith('pyattck_techniques'):
                 package_list.append(os.path.join(root,file))
     return package_list
 
@@ -128,7 +137,7 @@ def generate_mappings(yaml_data, args):
                     technique_dict['commands'].append(string_data['commands'][item]['id'])
                     command_dict[string_data['commands'][item]['id']] = string_data['commands'][item]['command'].replace("$CURDIR$", args['CURDIR'])\
                         .replace("$RANDOMURL$", args['RANDOMURL']).replace("$RANDOMURL_PS1$",args['RANDOMURL_PS1']).replace("$RANDOMPORTCOMMON$",str(args['RANDOMPORTCOMMON']))\
-                        .replace("$RANDOMPORTUNCOMMON$",str(args['RANDOMPORTUNCOMMON'])).replace("$TARGET$", args['target']).replace("$FQDN$", args['FQDN'])
+                        .replace("$RANDOMPORTUNCOMMON$",str(args['RANDOMPORTUNCOMMON'])).replace("$TARGET$", args['target']).replace("$FQDN$", args['FQDN']).replace("$TEMPFILE$", args['TEMPFILE'])
                     #technique_dict['commands'].append(string_data['commands'][item]['command'])
                     i = 0
                     index = "None"
@@ -194,6 +203,8 @@ def update_args(args):
     logging.info(str(datetime.datetime.now()) + f" TARGET: {args['target']}")
     print(f"MODE: {args['mode']}")
     logging.info(str(datetime.datetime.now()) + f" MODE: {args['mode']}")
+    args['TEMPFILE'] = deliveries.CMD_REPLACEMENTS.TEMPFILE
+    logging.info(str(datetime.datetime.now()) + f" TEMPFILE: {args['TEMPFILE']}")
     return args
 
 def main():
