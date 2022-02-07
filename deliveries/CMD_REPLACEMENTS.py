@@ -3,6 +3,8 @@ import random
 import string
 import os
 import socket
+import tempfile
+
 
 def get_fqdn():
     fqdn = socket.getfqdn()
@@ -45,4 +47,6 @@ RANDOMUSER = random.choice(["threatsim1", "simulating", "support_ast", "microsof
 RANDOMDOMAINUSER = []
 RANDOMPORTUNCOMMON = random.choice([808, 880, 4050, 8000, 5190, 7900, 4443, 6789, 444, 8531, 4444, 50501, 8443, 9999])
 RANDOMPORTCOMMON = random.choice([21, 22, 23, 25, 8080, 80, 137, 138, 139, 443, 445, 53, 23, 161, 502, 102, 1502])
+tmp = tempfile.NamedTemporaryFile(delete=False)
+TEMPFILE = tmp.name
 FQDN = get_fqdn()
