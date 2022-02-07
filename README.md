@@ -53,6 +53,7 @@ from a known set of TTPs and technique-based patterns where a random command tha
 * $TARGET$ - Remote Target if supplied to ThreatSim
 * $USER$ - User Given to Script [Not Done Yet]
 * $PASSWORD$ - Password Give to Script [Not Done Yet]
+* $TEMPFILE$ - Randomly Generated Temporary File
 * $CURDIR$ - Replace with Current Working Directory
 * $RANDOMURL$ - Replace with randomly generated DGA-style URL
 * $RANDOMURL_PS1$ - Replace with randomly generated DGA-Style URL to a .PS1 script.
@@ -72,3 +73,4 @@ from a known set of TTPs and technique-based patterns where a random command tha
 * https://attack.mitre.org/
 * https://github.com/swimlane/pyattck
 * https://github.com/ethereal-vx/Antivirus-Artifacts
+* https://github.com/CyberMonitor/Invoke-Adversary
