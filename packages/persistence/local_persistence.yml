@@ -7,7 +7,8 @@ commands:
       command: 'cmd.exe /c at \\$target 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
       stealth: low
       mitre:
-         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Execution;NULLINGOUT-T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         #- 'Persistence;T1053;Scheduled Task/Job'
       comments: 'Demonstrates Remote Task Scheduling often used by Threat Actors for persistence or execution'
    scheduled_task_local_1:
       remote: false
@@ -16,7 +17,26 @@ commands:
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Persistence;T1053;Scheduled Task/Job'
       comments: 'Demonstrates Local Task Scheduling often used by Threat Actors for persistence or execution'
+   scheduled_task_local_2:
+      remote: false
+      id: scheduled_task_local_2
+      command: 'cmd.exe /c at 00:00 /every:M,T,W,Th,F cmd /c C:\ThreatSim.bat'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Persistence;T1053;Scheduled Task/Job'
+      comments: 'Demonstrates Local Task Scheduling often used by Threat Actors for persistence or execution'
+   new_service_local_1:
+      remote: false
+      id: new_service_local_1
+      command: 'powershell -Command "New-Service -Name \"ThreatSim\" -BinaryPathName \"ThreatSim.exe\" -DisplayName \"ThreatSim Service\" -Description \"ThreatSim Service\" -StartupType Automatic -Verbose"'
+      stealth: low
+      mitre:
+         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
+         - 'Persistence;T1543.003;Create or Modify System Process: Windows Service'
+      comments: 'Demonstrates creation of Windows Service, often used for persistence or execution.'
    add_local_admin_1:
       remote: false
       id: add_local_admin_1
@@ -47,7 +67,7 @@ commands:
    add_registry_run_1:
       remote: false
       id: add_registry_run_1
-      command: 'reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v threatsim /d "C:\temp\threatsim.dll"'
+      command: 'reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v threatsim /d "$TEMPFILE$" /f'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -57,7 +77,7 @@ commands:
    add_registry_run_2:
       remote: false
       id: add_registry_run_2
-      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "C:\threatsim\threatsim.exe"'
+      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "$TEMPFILE$" /f'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -67,7 +87,7 @@ commands:
    add_registry_run_3:
       remote: false
       id: add_registry_run_3
-      command: 'reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "C:\threatsim\threatsim.exe"'
+      command: 'reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /v threatsim /d "$TEMPFILE$" /f'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -77,7 +97,7 @@ commands:
    add_registry_run_4:
       remote: false
       id: add_registry_run_4
-      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices /v threatsim /d "threatsim"'
+      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices /v threatsim /d "threatsim" /f'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -87,7 +107,7 @@ commands:
    add_registry_run_5:
       remote: false
       id: add_registry_run_5
-      command: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders /v threatsim /d "threatsim"'
+      command: 'reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v threatsim /d "threatsim" /f'
       stealth: low
       mitre:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
@@ -103,40 +123,5 @@ commands:
          - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
          - 'Privilege Escalation;T1547.001;Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder'
          - 'Command and Control;T1105;Ingress Tool Transfer'
+         - 'Persistence;T1547.001;Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder'
       comments: 'Download a file with certutil to a startup folder location.'
-   allow_rdp_registry_cmd:
-      remote: false
-      id: allow_rdp_registry
-      command: 'reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f'
-      stealth: low
-      mitre:
-         - 'Defense Evasion;T1112;Modify Registry'
-         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
-      comments: 'Allow Remote Desktop Connections.'
-   allow_rdp_firewall_cmd:
-      remote: false
-      id: allow_rdp_firewall
-      command: 'netsh advfirewall firewall set rule group="remote desktop" new enable=yes'
-      stealth: low
-      mitre:
-         - 'Defense Evasion;T1562.004;Impair Defenses: Disable or Modify System Firewall'
-         - 'Execution;T1059.003;Command and Scripting Interpreter: Windows Command Shell'
-      comments: 'Allow Remote Desktop Connections.'
-   allow_rdp_registry_ps:
-      remote: false
-      id: allow_rdp_registry_ps
-      command: 'powershell Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -name fDenyTSConnections -Value 0'
-      stealth: low
-      mitre:
-         - 'Defense Evasion;T1112;Modify Registry'
-         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
-      comments: 'Allow Remote Desktop Connections.'
-   allow_rdp_firewall_ps:
-      remote: false
-      id: allow_rdp_firewall_ps
-      command: 'Enable-NetFirewallRule -DisplayGroup "Remote Desktop"'
-      stealth: low
-      mitre:
-         - 'Defense Evasion;T1562.004;Impair Defenses: Disable or Modify System Firewall'
-         - 'Execution;T1059.001;Command and Scripting Interpreter: PowerShell'
-      comments: 'Allow Remote Desktop Connections.'
